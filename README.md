@@ -12,5 +12,6 @@ Smart Home Project - Placement 2021
 # Setup:
 
 ### Run the following command
-`cd SmartHomeTech`
-`docker-compose run --build`
+
+<pre>cd SmartHomeTech</pre>
+<pre>docker-compose run --build</pre>
