@@ -1,0 +1,13 @@
+
+
+.HD{
+    background-image: url('home.jpg');
+    padding-top: 50px;
+    padding-bottom: 680px;
+    background-position: center;
+    background-size: cover;
+    background-color: #dd845a;
+    color: white;
+    text-shadow: 1px 1px 8px black;
+}
+
