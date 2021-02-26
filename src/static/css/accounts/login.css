@@ -1,0 +1,34 @@
+section.login_page{
+}
+aside{
+
+}
+aside.login_img{
+    height: 100vh;
+    width: 50vw;
+    background-color: blueviolet;
+    
+}
+.form .heading{
+    text-align: center;
+
+}
+.form .logo{
+    width: 40px;
+    height: 40px;
+    background-color: blueviolet;
+}
+.login_page aside.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+aside form {
+    margin-top: 30px;
+    text-align: center;
+
+}
+aside form .form-control{
+    width: 400px;
+}

@@ -8,7 +8,7 @@ def home(request):
 
 
 def login(request):
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts/login.html', {'include': False})
 
 
 def products(request):
