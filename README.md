@@ -14,4 +14,13 @@ Smart Home Project - Placement 2021
 ### Run the following command
 
 <pre>cd SmartHomeTech</pre>
-<pre>docker-compose run --build</pre>
+<pre>docker-compose up</pre>
+
+# Routes
+
+1. '/'
+2. '/login'
+
+# Admin Routes
+
+1. '/admin'
