@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'accounts/landing.html')
+    return render(request, 'accounts/landing.html', {'include': True})
 
 
 def login(request):
