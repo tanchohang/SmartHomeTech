@@ -23,4 +23,10 @@ Smart Home Project - Placement 2021
 
 # Admin Routes
 
+#### username: admin
+
+#### password: admin
+
+---
+
 1. '/admin'
