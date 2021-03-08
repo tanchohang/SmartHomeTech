@@ -1,8 +1,28 @@
 .jumbotron feature {
     color: white;
-    background-size: cover;
-    background-position: center;
     position: fixed;
+    background:no-repeat center center fixed;
+
+#background
+{
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-size: 300px 100px;
+}
+
+#backgroud img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    background-size: 300px 100px;
 }
 .about {
     position: relative;
@@ -11,51 +31,46 @@
     padding-bottom: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #00539C;
+
 
 }
 
     .about .about-img img {
         width: 100%;
         border-radius: 10px;
-        background-color: green;
     }
 
     .about .about-text h2 {
         position: relative;
-        color: #00539C;
+
         font-size: 50px;
         margin-bottom: 15px;
-        background-color: green;
+  
     }
 
         .about .about-text h2 span {
             font-size: 120px;
-            background-color: green;
+
         }
 
     .about .about-text p {
         font-size: 16px;
         margin-bottom: 30px;
         text-align: right;
-        background-color: green;
+   
     }
 
     .about .about-text a.btn {
         padding: 15px 35px;
         font-size: 16px;
         text-transform: uppercase;
-        color: #000000;
         border: none;
         border-radius: 5px;
-        background: #FFD662;
         transition: .3s;
-        background-color: green;
     }
 
         .about .about-text a.btn:hover {
             color: #ffffff;
-            background: #00539C;
         
         }
 
