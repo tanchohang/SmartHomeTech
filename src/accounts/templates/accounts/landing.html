@@ -1,25 +1,18 @@
 ﻿{% extends 'accounts/main.html' %}
 {% load static %}
 
-<!-- CSS Libraries -->
-    {%block style%}
-
-<link href="{%static 'css/accounts/landing.css'%}" rel="stylesheet">
-
-    {%endblock%}
-
 {%block content%}
 <!-- Feature -->
 <img src="{% static 'css/images/background.jpg' 'fill'  %}" alt="" style="width:1519px;height:720px;">
 <div class="HD">
     <div class="container">
-        <h1><center><span class="glyphicon glyphicon-equalizer"></span>Smart Automation</center></h1>
-        <h2>
-            <center>
+        <h1 style="text-align:center"><span class="glyphicon glyphicon-equalizer"></span>Smart Automation</h1>
+        <h6 style="text-align:center">
+            
                 Objectively innovate empowered manufactured products<br />
                 whereas parallel platforms.
-            </center>
-        </h2>
+        </h6>
+        </br>
     </div>
 </div>
 
@@ -30,14 +23,15 @@
         <div class="row">
             <div class="col-lg-5 col-md-6">
                 <div class="about-img">
-                    <img src="{% static 'css/images/Rectangle.jpg' %}">
+                    <img src="{% static 'css/images/Rectangle.jpg' %}" style="width:350px;height:300px";>
                 </div>
             </div>
+
             <div class="col-lg-7 col-md-6">
                 <div class="about-text">
                     
                     <h3>Designers & Installers</h3>
-                    <h4><a class="btn btn-primary" href="#">Click Here</a></center></h4>>
+                    <h4><a class="btn btn-primary" href="#">Click Here</a></h4>
                 </div>
             </div>
         </div>
@@ -48,56 +42,43 @@
 <div class="team">
     <div class="container">
         <div class="section-header">
-            <h2><center> Medium Tittle  </center></h2>
-            <h2>
-                <center>
-                    Objectively innovate empowered manufactured products<br />
-                    whereas parallel platforms.
-                </center>
+            </br>
+            </br>
+            </br>
+            <h2 style="text-align:center">
+                your Smart Home is just few Steps Away
+                </br>
             </h2>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-4">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="{% static 'css/images/Security.jpg' %}" style="width:250px;height:300px;">
+                        <img src="{% static 'css/images/white1.jpg' %}" style="width:350px;height:300px;">
                     </div>
                     <div class="team-text">
-                        <h2>Security</h2>
-                        <h3>Developer</h3>
+                        <h5>nmnm</h5>
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-4">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="{% static 'css/images/light.jpg' %}" style="width:250px;height:300px;">
+                        <img src="{% static 'css/images/white3.jpg' %}" style="width:350px;height:300px;">
                     </div>
                     <div class="team-text">
                         <h2>Lightning</h2>
-                        <h3>Developer</h3>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-4">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="{% static 'css/images/music.jpg' %}" style="width:250px;height:300px;">
+                        <img src="{% static 'css/images/white2.jpg' %}" style="width:350px;height:300px;">
                     </div>
                     <div class="team-text">
                         <h2>Music systems</h2>
-                        <h3>Developer</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="{% static 'css/images/kitchen.jpg' %}" style="width:250px;height:300px;">
-                    </div>
-                    <div class="team-text">
-                        <h2>kitchen controllers</h2>
-                        <h3>Developer</h3>
                     </div>
                 </div>
             </div>
