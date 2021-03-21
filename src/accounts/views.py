@@ -10,9 +10,12 @@ def home(request):
 def login(request):
     return render(request, 'accounts/login.html', {'include': False})
 
+def register(request):
+    return render(request, 'accounts/register.html', {'include': False})
+
 
 def products(request):
-    return render(request, 'accounts/products.html')
+    return render(request, 'accounts/services.html')
 
 
 def portfolio(request):

@@ -1,11 +1,47 @@
-{%block content%}
-<!-- Feature -->
-<img src="{% static 'css/images/register.jpg' %}" />
-<div class="HD">
-    <div class="container">
-        <h1><center><span class="glyphicon glyphicon-equalizer"></span>Smart Automation</center></h1>
-        <h2>
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
 
-        </h2>
+{%block content%}
+<section class="login_page container-fluid">
+    <div class="row">
+        <aside class="col-sm">
+            <img src="{% static 'css/images/R2.jpg' %}"alt="" style="width:630px;height:750px;">
+        </aside>
+        <aside class="form col-md">
+            <div class="heading">
+                <img class="logo">
+                <h3>Register</h3>
+            </div>
+            <form>
+                <div class="form-group ">
+                    <input type="name" class="form-control" name="" id="firstname" aria-describedby="emailHelp" placeholder="First Name">
+
+                </div>
+                <div class="form-group ">
+                    <input type="name" class="form-control" name="" id="Secondname" aria-describedby="emailHelp" placeholder="Second Name">
+
+                </div>
+                <div class="form-group ">
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+                <div class="form-group ">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-group ">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Confirm Password">
+                </div>
+                <div class="form-group ">
+                    <input type="phone number" class="form-control" name="password" id="password" placeholder="phone number">
+                </div>
+                <button type="submit" class="btn btn-primary submit">Register</button>
+            </form>
+        </aside>
+
     </div>
-</div>
+
+</section>
+
+
+{%endblock%}
