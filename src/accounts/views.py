@@ -14,9 +14,8 @@ def register(request):
     return render(request, 'accounts/register.html', {'include': False})
 
 
-def products(request):
+def services(request):
     return render(request, 'accounts/services.html')
-
 
 def portfolio(request):
     return render(request, 'accounts/portfolio.html')

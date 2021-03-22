@@ -1,0 +1,63 @@
+section.products_page container-fluid {
+}
+.product {
+    background: #174B2E;
+    text-decoration-color: white;
+    height: 800px;
+    margin: auto;
+    text-align:match-parent;
+}
+.h2 {
+    position: absolute;
+    width: 566px;
+    height: 543px;
+    left: 789px;
+    top: 209px;
+    background: rgba(126, 202, 159, 0.09);
+    border-radius: px;
+}
+.h3 {
+    position: absolute;
+    width: 261.23px;
+    height: 267.25px;
+    left: 648px;
+    top: 280px;
+    border-radius:px;
+}
+.right{
+    position: absolute;
+    width: 261.23px;
+    height: 267.25px;
+    left: 648px;
+    top: 280px;
+    border-radius:px;
+}
+    .circle {
+    position: relative;
+    overflow: hidden;
+}
+    .circle. circle1 {
+        width: 300px;
+        height: 300px;
+        float: left;
+        border-radius: 25%;
+        text-align :right;
+        marginradius:20px;
+    }
+.hint {
+    text-align: right;
+    float:right;
+}
+.circle . circle2 {
+    width: 300px;
+    height: 300px;
+    float: right;
+    border-radius: 50%;
+    text-align: right;
+    marginradius: 20px;
+}
+.text box {
+    border-style: solid;
+    border-color: #287EC7;
+    padding: 1em
+}
