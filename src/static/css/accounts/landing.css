@@ -3,47 +3,62 @@ section.landing_page container-fluid {
 .about
  {
 }
-* {
-    box-sizing: border-box
-}
 
-/* Container needed to position the overlay. Adjust the width as needed */
-.container {
-    position: relative;
-    width: 50%;
-    max-width: 300px;
-}
-
-/* Make the image to responsive */
-.image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* The overlay effect - lays on top of the container and over the image */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
-    color: #f1f1f1;
-    width: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
-}
-
-/* When you mouse over the container, fade in the overlay title */
-.container:hover .overlay {
-    opacity: 1;
-}
 .about1 {
     background-color:darkseagreen;
 }
+}
 
-.container:hover .overlay {
-    opacity: 1;
+.about-text {
+    background: transparent;
+    vertical-align: top;
+    display: table-cell;
+    padding: 8px 0 0;
+    position: fixed;
+    top: 20%;
+    left: 50%
+    margin-top: 50px;
+    margin-left: 350px;
+    vertical-align:middle;
+}
+
+.int {
+    width: 599px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 150px;
+    background-color: darkseagreen
+    vertical-align  :middle;
+}
+.about-text
+}
+<!---------css steps ------>
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10%;
+}
+.team-img {
+    padding: 30px;
+    margin: 2%;
+    background: white;
+    width: 30%;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius: 3px;
+    transition: .2s all;
+}
+.row:hover .team-img {
+    filter: blur(3px);
+    opacity: .5;
+    transform: scale(.98);
+    box-shadow: none;
+}
+
+    .row:hover .team-img:hover {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+        box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
+    }
