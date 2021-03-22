@@ -16,10 +16,10 @@ section.landing_page container-fluid {
     padding: 8px 0 0;
     position: fixed;
     top: 20%;
-    left: 50%
+    left: 50%;
     margin-top: 50px;
     margin-left: 350px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .int {
