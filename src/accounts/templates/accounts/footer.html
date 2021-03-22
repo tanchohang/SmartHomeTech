@@ -1,40 +1,48 @@
-﻿<div class="footer-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 footer-info-item">
-                <h3>Information</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Orders &amp; Returns</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 footer-info-item">
-                <h3>My Account</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">View Cart</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Track My Order</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 footer-info-item">
-                <h3><span class="glyphicon glyphicon-list-alt"></span> Newsletter</h3>
-                <p>Sign up for exclusive offers.</p>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            Subscribe!
-                        </button>
-                    </span>
+﻿{% extends 'accounts/main.html' %}
+{% load static %}
+
+{%block content%}
+<section class="footer_page container-fluid">
+    <div class="footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 footer-info-item">
+                    <h3>Information</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Orders &amp; Returns</a></li>
+                    </ul>
                 </div>
-            </div>
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
-</footer>
+                <div class="col-sm-4 footer-info-item">
+                    <h3>My Account</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 footer-info-item">
+                    <h3><span class="glyphicon glyphicon-list-alt"></span> Newsletter</h3>
+                    <p>Sign up for exclusive offers.</p>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                Subscribe!
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    </footer>
+{%endblock%}
+</section>
+
 
 

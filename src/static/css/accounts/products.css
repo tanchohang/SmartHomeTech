@@ -61,3 +61,23 @@ section.products_page container-fluid {
     border-color: #287EC7;
     padding: 1em
 }
+.text {
+    background: transparent;
+    vertical-align: top;
+    display: table-cell;
+    padding: 8px 0 0;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: 350px;
+    vertical-align: middle;
+}
+
+.int {
+    width: 599px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 150px;
+    background-color: darkseagreen vertical-align :middle;
+}
