@@ -1,27 +1,26 @@
 section.login_page container-fluid {
-
 }
 /* Container holding the image and the text */
 .container {
-    position: relative;
     text-align: center;
     color: white;
-    Background-image: 100%;
+    position: absolute;
+    width: 1440px;
+    height: 890px;
+    left: 0px;
+    top: 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width: 150px;
-    height: 200px;
-    margin: 0;
-    margin-right:50;
-    padding: 0;
 }
+
 .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transform:left;
+    transform: left;
 }
+
 .Rectangle25 {
     position: absolute;
     width: 1440px;
@@ -29,6 +28,7 @@ section.login_page container-fluid {
     left: 0px;
     top: 0px;
 }
+
 aside {
     position: absolute;
     width: 700px;
@@ -36,22 +36,24 @@ aside {
     left: 208px;
     top: 61px;
     background: #FFFFFF;
-    position:center;
+    position: center;
 }
+
     aside.login_img {
         height: 100vh;
         width: 100vw;
-        background-color:darkmagenta;
     }
-.form .heading{
-    text-align: center;
 
+.form .heading {
+    text-align: center;
 }
-.form .logo{
+
+.form .logo {
     width: 40px;
     height: 40px;
     background-color: blueviolet;
 }
+
 .login_page aside.form {
     display: flex;
     flex-direction: column;
@@ -64,10 +66,12 @@ aside {
     top: 61px;
     background: #F4F8FC;
 }
+
 aside form {
     margin-top: 30px;
     text-align: center;
 }
-aside form .form-control{
-    width: 500px;
-}
+
+    aside form .form-control {
+        width: 500px;
+    }

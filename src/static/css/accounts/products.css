@@ -22,7 +22,7 @@ section.products_page container-fluid {
     height: 267.25px;
     left: 648px;
     top: 280px;
-    border-radius:px;
+    border-radius:50px;
 }
 .right{
     position: absolute;
@@ -32,19 +32,30 @@ section.products_page container-fluid {
     top: 280px;
     border-radius:px;
 }
+<!--
+--css for source Services---- >
+int
+ {
+    width: 599px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 100px;
+    background-color: darkseagreen;
+    vertical-align: middle;
+}
     .circle {
     position: relative;
     overflow: hidden;
 }
-    .circle. circle1 {
-        width: 300px;
-        height: 300px;
-        float: ;
-        border-radius: 25%;
-        text-align :right;
-        marginradius:20px;
-    }
-.hint {
+.circle. circle1 {
+    width: 300px;
+    height: 300px;
+    float:left;
+    border-radius: 25%;
+    text-align :right;
+    marginradius:20px;
+ }
+.int {
     text-align: right;
     float:right;
 }
@@ -75,13 +86,7 @@ section.products_page container-fluid {
     float:right;
 }
 
-.int {
-    width: 599px;
-    height: 400px;
-    margin-top: 200px;
-    margin-left: 150px;
-    background-color: darkseagreen vertical-align :middle;
-}
+
 .container {
     width: 33%;
     height: auto;
@@ -92,4 +97,48 @@ section.products_page container-fluid {
     -webkit-shape-outside: circle();
     shape-outside: circle();
 }
-    
+.post-container {
+    margin: 20px 20px 0 0;
+    border: 5px solid transparent;
+    overflow: auto
+}
+
+.post-thumb {
+    float: right
+}
+
+    .post-thumb img {
+        display: block
+    }
+
+.post-content {
+    margin-right: 210px
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+
+.post-container1 {
+    margin: 20px 20px 0 0;
+    border: 5px solid transparent;
+    overflow: auto
+}
+
+.post-thumb1 {
+    float:left;
+}
+
+    .post-thumb1 img {
+        display: block
+    }
+
+.post-content1 {
+    margin-right: 210px
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}

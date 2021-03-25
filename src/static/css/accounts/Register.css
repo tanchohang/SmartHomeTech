@@ -4,7 +4,7 @@ section.register_page container-fluid {
 aside {
 }
 
-    aside.login_img {
+aside.login_img{
         height: 100vh;
         width: 50vw;
         background-color: blueviolet;

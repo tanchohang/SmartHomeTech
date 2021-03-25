@@ -1,6 +1,6 @@
 section.landing_page container-fluid {
 }
-.
+
 .about-img2 {
     padding: 30px;
     margin: 2%;
@@ -24,11 +24,11 @@ section.landing_page container-fluid {
         opacity: 1;
         box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
     }
-.int {
+.int4 {
     width: 599px;
     height: 400px;
     margin-top: 200px;
-    margin-left: 90px;
+    margin-left: 100px;
     vertical-align: middle;
 }
 .team {
