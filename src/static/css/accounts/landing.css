@@ -5,6 +5,10 @@ section.landing_page container-fluid {
     width: 100%;
     height: auto;
 }
+.team-text {
+    border: "thick solid #0000FF";
+    border-style:solid;
+}
 .overlay {
     position: absolute;
     top: 0;

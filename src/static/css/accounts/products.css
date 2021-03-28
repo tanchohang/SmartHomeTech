@@ -42,6 +42,24 @@ section.products_page container-fluid {
     margin-top:50px;
     text-color:white;
 }
+.post {
+    position: absolute;
+    width: 1440px;
+    height: 842px;
+    left: 50px;
+    top: 2590px;
+    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
+    padding:10px;
+}
+.circle {
+    background: white;
+    border-radius: 100%;
+    width: 300px;
+    height: 250px;
+    top: 50px;
+    border-color:black;
+}
+
 <!----css for source Services---- >
 int
  {
