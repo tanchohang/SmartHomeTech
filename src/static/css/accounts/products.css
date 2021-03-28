@@ -11,29 +11,38 @@ section.products_page container-fluid {
     position: absolute;
     width: 566px;
     height: 543px;
-    left: 789px;
+    left: 689px;
     top: 209px;
     background: rgba(126, 202, 159, 0.09);
-    border-radius: px;
+    border-radius: 20px;
 }
 .h3 {
     position: absolute;
-    width: 261.23px;
-    height: 267.25px;
-    left: 648px;
-    top: 280px;
-    border-radius:50px;
+    width: 560.12px;
+    height: 300.42px;
+    left: 1000px;
+    top: 250px;
+    background: url(gira4.jpg);
+    border-radius: 20px;
 }
-.right{
+.h4 {
     position: absolute;
-    width: 261.23px;
-    height: 267.25px;
-    left: 648px;
-    top: 280px;
-    border-radius:px;
+    width: 183.79px;
+    height: 188.03px;
+    left: 650.44px;
+    top: 500px;
+    background: url(gira3.jpg);
+    border-radius: 20px;
 }
-<!--
---css for source Services---- >
+.top {
+    font: Work Sans;
+    left: 300px;
+    top: 280px;
+    position: absolute;
+    margin-top:50px;
+    text-color:white;
+}
+<!----css for source Services---- >
 int
  {
     width: 599px;
