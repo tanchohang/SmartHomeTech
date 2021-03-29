@@ -57,7 +57,19 @@ section.products_page container-fluid {
     width: 300px;
     height: 250px;
     top: 50px;
-    border-color:black;
+    left: 20px;
+    border-color: solid black;
+    padding-left: 10px;
+}
+.circle1 {
+    background: white;
+    border-radius: 100%;
+    width: 300px;
+    height: 250px;
+    top: 50px;
+    left: 20px;
+    border-color: solid black;
+    float:left;
 }
 
 <!----css for source Services---- >
@@ -70,9 +82,10 @@ int
     background-color: darkseagreen;
     vertical-align: middle;
 }
-    .circle {
+.circle {
     position: relative;
     overflow: hidden;
+    padding-left: 10px;
 }
 .circle. circle1 {
     width: 300px;

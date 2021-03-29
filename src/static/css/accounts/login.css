@@ -5,7 +5,7 @@ section.login_page container-fluid {
     text-align: center;
     color: white;
     position: absolute;
-    width: 1440px;
+    width: 1000px;
     height: 890px;
     left: 0px;
     top: 0px;
@@ -31,17 +31,18 @@ section.login_page container-fluid {
 
 aside {
     position: absolute;
-    width: 700px;
-    height: 700px;
-    left: 208px;
-    top: 61px;
-    background: #FFFFFF;
+    width: auto;
+    height: auto;
+    margin-left: 208px;
+    margin-top: 61px;
+    background: #174B2E;
     position: center;
 }
 
     aside.login_img {
         height: 100vh;
         width: 100vw;
+        background: #174B2E;
     }
 
 .form .heading {
@@ -51,7 +52,7 @@ aside {
 .form .logo {
     width: 40px;
     height: 40px;
-    background-color: blueviolet;
+    background: #174B2E;
 }
 
 .login_page aside.form {
@@ -64,7 +65,7 @@ aside {
     height: 768px;
     left: 750px;
     top: 61px;
-    background: #F4F8FC;
+    background: #174B2E;
 }
 
 aside form {
