@@ -1,0 +1,17 @@
+section.login_page container-fluid {
+}
+.p1 {
+    position: absolute;
+    width: 430px;
+    height: 299px;
+    left: 509px;
+    top: 1916px;
+    background: rgba(126, 202, 159, 0.29);
+}
+.hvrbox_background {
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

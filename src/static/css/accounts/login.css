@@ -35,14 +35,12 @@ aside {
     height: auto;
     margin-left: 208px;
     margin-top: 61px;
-    background: #174B2E;
     position: center;
 }
 
     aside.login_img {
         height: 100vh;
         width: 100vw;
-        background: #174B2E;
     }
 
 .form .heading {
@@ -65,7 +63,6 @@ aside {
     height: 768px;
     left: 750px;
     top: 61px;
-    background: #174B2E;
 }
 
 aside form {
@@ -75,4 +72,4 @@ aside form {
 
     aside form .form-control {
         width: 500px;
-    }
+ }

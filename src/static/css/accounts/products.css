@@ -47,32 +47,36 @@ section.products_page container-fluid {
     width: 1440px;
     height: 842px;
     left: 50px;
-    top: 2590px;
+    top: 3000px;
     background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
-    padding:10px;
+    padding: 20px;
 }
+
 .circle {
+    margin-left: 20px;
     background: white;
     border-radius: 100%;
     width: 300px;
     height: 250px;
-    top: 50px;
+    top: 200px;
     left: 20px;
     border-color: solid black;
-    padding-left: 10px;
+    float: left;
 }
+
 .circle1 {
     background: white;
     border-radius: 100%;
     width: 300px;
     height: 250px;
-    top: 50px;
+    top: 200px;
     left: 20px;
     border-color: solid black;
-    float:left;
+    float: left;
+
 }
 
-<!----css for source Services---- >
+<!----css for source Services--------------------->
 int
  {
     width: 599px;
@@ -86,15 +90,10 @@ int
     position: relative;
     overflow: hidden;
     padding-left: 10px;
+    float: left;
+    margin-bottom: 20px;
 }
-.circle. circle1 {
-    width: 300px;
-    height: 300px;
-    float:left;
-    border-radius: 25%;
-    text-align :right;
-    marginradius:20px;
- }
+
 .int {
     text-align: right;
     float:right;
@@ -181,4 +180,18 @@ int
 .post-title {
     font-weight: bold;
     font-size: 200%
+}
+
+.pro {
+    margin: 20px 20px 0 0;
+    border: 5px solid transparent;
+    overflow: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    position: absolute;
+    width: 1440px;
+    height: 842px;
+    left: 0px;
+    top: 3378px;
+    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
 }

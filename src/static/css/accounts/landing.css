@@ -1,9 +1,16 @@
 section.landing_page container-fluid {
 }
-.img{
-    display: block;
-    width: 100%;
-    height: auto;
+.team-image {
+    border: 2px solid #000000;
+    height:800;
+    width:300;
+}
+.team-image1 {
+    border: 2px solid #000000;
+    position: absolute;
+    left: 50px;
+    right: 20.7%;
+    top: 11.53%;
 }
 .text {
     color: white;
@@ -51,6 +58,7 @@ section.landing_page container-fluid {
     margin-top: 200px;
     margin-left: 100px;
     vertical-align: middle;
+    background: #7ECA9F 24%;
 }
 .team {
     background: #f1f1f1;

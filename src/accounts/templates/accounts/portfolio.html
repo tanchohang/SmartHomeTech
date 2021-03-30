@@ -1,28 +1,30 @@
 {% extends 'accounts/main.html' %}
 {% load static %}
 {%block content%}
-<img src="{% static 'css/images/image1.jpg' 'fill'  %}" alt="" style="width:1519px;height:720px;">
-<div class="team">
-    <div class="container">
-        <div class="section-header">
-            </br>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-4">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="{% static 'css/images/first.jpg' %}" style="width:500px;">
-                    </div>
+<section class="portfolio_page container-fluid">
+    <div class="buffer">
+        <img src="{% static 'css/images/image1.jpg' 'fill'  %}" alt="" style="width:1500px;">
+    </div>
+    <div class="G1">
+        <div class=" row">
+            <div class="col-lg-4 col-md-4">
+                <div class="container">
+                    <img src="{% static 'css/images/first.jpg' %}" alt="" style="width:500px;height:346px;">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-4">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="{% static 'css/images/second.jpg' %}" style="width:500px;">
+            <div class="col-lg-4 col-md-4">
+                <div class="team-item item-right">
+                    <div class="container">
+                        <img src="{% static 'css/images/first.jpg' %}" alt="" style="width:500px;height:346px;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <br />
+    </br>
+    <div class="utter">
+        <img src="{% static 'css/images/home.jpg' %}" alt="" style="width:600px;">
+    </div>
+</section>
 {%endblock%}
