@@ -149,14 +149,16 @@ int
     left: 0px;
     top: 3378px;
     background: 7ECA9F;
+    Font: Work Sans;
+    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
 }
 .circle {
     display: inline-block;
     border: 2px solid;
     position: relative;
     border-radius: 50%;
-    width: 90%;
+    width: 70%;
     height: 50%;
-    padding:90px;;
-    background: lightblue;
+    padding:90px;
+    Font:Work Sans;
 }

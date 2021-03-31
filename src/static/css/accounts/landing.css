@@ -1,11 +1,16 @@
 section.landing_page container-fluid {
-    height: 100%;
-    width: 100%;
+ 
+}
+.land {
+    height:200px;
+    width: 115%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1920px;
+    min-width: 480px;
 }
-
 
 
 .team-image {
@@ -66,7 +71,7 @@ section.landing_page container-fluid {
     margin-top: 200px;
     margin-left: 100px;
     vertical-align: middle;
-    background: #7ECA9F 24%;
+
 }
 .team {
     background: #f1f1f1;
