@@ -31,16 +31,15 @@ section.login_page container-fluid {
 
 aside {
     position: absolute;
-    width: auto;
-    height: auto;
-    margin-left: 208px;
-    margin-top: 61px;
-    position: center;
+    left: 208px;
+    top: 61px;
+    background: #FFFFFF;
 }
 
     aside.login_img {
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width:75%;
+        background-color:aquamarine;
     }
 
 .form .heading {
@@ -50,7 +49,6 @@ aside {
 .form .logo {
     width: 40px;
     height: 40px;
-    background: #174B2E;
 }
 
 .login_page aside.form {
@@ -66,10 +64,10 @@ aside {
 }
 
 aside form {
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
 }
 
     aside form .form-control {
-        width: 500px;
+        width: 200px;
  }

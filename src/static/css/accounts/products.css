@@ -1,6 +1,11 @@
 section.products_page container-fluid {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.product {
+.product1{
     background: #174B2E;
     text-decoration-color: white;
     height: 800px;
@@ -42,40 +47,6 @@ section.products_page container-fluid {
     margin-top:50px;
     text-color:white;
 }
-.post {
-    position: absolute;
-    width: 1440px;
-    height: 842px;
-    left: 50px;
-    top: 3000px;
-    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
-    padding: 20px;
-}
-
-.circle {
-    margin-left: 20px;
-    background: white;
-    border-radius: 100%;
-    width: 300px;
-    height: 250px;
-    top: 200px;
-    left: 20px;
-    border-color: solid black;
-    float: left;
-}
-
-.circle1 {
-    background: white;
-    border-radius: 100%;
-    width: 300px;
-    height: 250px;
-    top: 200px;
-    left: 20px;
-    border-color: solid black;
-    float: left;
-
-}
-
 <!----css for source Services--------------------->
 int
  {
@@ -85,13 +56,6 @@ int
     margin-left: 100px;
     background-color: darkseagreen;
     vertical-align: middle;
-}
-.circle {
-    position: relative;
-    overflow: hidden;
-    padding-left: 10px;
-    float: left;
-    margin-bottom: 20px;
 }
 
 .int {
@@ -181,17 +145,22 @@ int
     font-weight: bold;
     font-size: 200%
 }
-
-.pro {
-    margin: 20px 20px 0 0;
-    border: 5px solid transparent;
-    overflow: auto;
-    margin-bottom: 20px;
-    text-align: center;
+<!--------------------->
+.post {
     position: absolute;
     width: 1440px;
     height: 842px;
-    left: 0px;
-    top: 3378px;
+    left: 50px;
+    top: 2500px;
     background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
+    padding:10px;
+}
+.circle {
+    border: 2px solid;
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
+    background: lightblue;
 }
