@@ -36,10 +36,10 @@ aside {
     background: #FFFFFF;
 }
 
-    aside.login_img {
+  . aside.login_img {
         height: 100%;
         width:75%;
-        background-color:aquamarine;
+        background-color:white;
     }
 
 .form .heading {
@@ -63,7 +63,7 @@ aside {
     top: 61px;
 }
 
-aside form {
+.aside form {
     margin-top: 10px;
     text-align: center;
 }
