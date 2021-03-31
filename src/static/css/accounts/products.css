@@ -1,11 +1,6 @@
 section.products_page container-fluid {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
-.product1{
+.product{
     background: #174B2E;
     text-decoration-color: white;
     height: 800px;
@@ -145,22 +140,23 @@ int
     font-weight: bold;
     font-size: 200%
 }
-<!--------------------->
+<!--
+--------------- -->
 .post {
     position: absolute;
     width: 1440px;
     height: 842px;
-    left: 50px;
-    top: 2500px;
-    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
-    padding:10px;
+    left: 0px;
+    top: 3378px;
+    background: 7ECA9F;
 }
 .circle {
+    display: inline-block;
     border: 2px solid;
     position: relative;
     border-radius: 50%;
-    width: 100%;
-    height: auto;
-    padding-top: 100%;
+    width: 90%;
+    height: 50%;
+    padding:90px;;
     background: lightblue;
 }

@@ -3,53 +3,8 @@
 .p1 {
     position: absolute;
     width: 430px;
-    height: 299px;
+    height: 430px;
     left: 509px;
     top: 1916px;
     background: rgba(126, 202, 159, 0.29);
-}
-<!--
--------------css-------------- >
-.product1{
-    background: #174B2E;
-    text-decoration-color: white;
-    height: 800px;
-    margin: auto;
-    text-align: match-parent;
-}
-.p2 {
-    position: absolute;
-    width: 251px;
-    height: 224px;
-    left: 133px;
-    top: 3000px;
-}
-
-.p3 {
-    position: absolute;
-    width: 560.12px;
-    height: 300.42px;
-    left: 1000px;
-    top: 250px;
-    background: url(gira4.jpg);
-    border-radius: 20px;
-}
-
-.h4 {
-    position: absolute;
-    width: 183.79px;
-    height: 188.03px;
-    left: 650.44px;
-    top: 500px;
-    background: url(gira3.jpg);
-    border-radius: 20px;
-}
-
-.top {
-    font: Work Sans;
-    left: 300px;
-    top: 280px;
-    position: absolute;
-    margin-top: 50px;
-    text-color: white;
 }
