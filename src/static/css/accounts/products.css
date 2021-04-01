@@ -22,7 +22,6 @@ section.products_page container-fluid {
     height: 300.42px;
     left: 1000px;
     top: 250px;
-    background: url(gira4.jpg);
     border-radius: 20px;
 }
 .h4 {
@@ -81,7 +80,8 @@ int
     margin-top: 50px;
     margin-left: 350px;
     vertical-align: middle;
-    float:right;
+    float: right;
+    Font: Work Sans;
 }
 
 
@@ -98,7 +98,8 @@ int
 .post-container {
     margin: 20px 20px 0 0;
     border: 5px solid transparent;
-    overflow: auto
+    overflow: auto;
+    Font: Work Sans;
 }
 
 .post-thumb {
@@ -148,7 +149,7 @@ int
     height: 842px;
     left: 0px;
     top: 3378px;
-    background: 7ECA9F;
+    background-color: 7ECA9F 100%;
     Font: Work Sans;
     background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
 }

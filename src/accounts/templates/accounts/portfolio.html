@@ -2,27 +2,48 @@
 {% load static %}
 {%block content%}
 <section class="portfolio_page container-fluid">
-    <div class="buffer">
-        <img src="{% static 'css/images/image1.jpg' 'fill'  %}" alt="" style="width:1500px;">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'css/images/image1.jpg' %}" alt="" style="width:1500px;">
+        </div>
+        <div class="col-md-6">
+            <div class="text-block">
+                <h4 style="text-align:Left">
+                    HOME TECHNOLOGY PORTFOLIO
+                </h4>
+                <p>A living testimony to beautifully crafted, technologically enhanced households</p>
+            </div>
+        </div>
     </div>
     <div class="G1">
         <div class=" row">
             <div class="col-lg-4 col-md-4">
-                <div class="container">
                     <img src="{% static 'css/images/first.jpg' %}" alt="" style="width:500px;height:346px;">
-                </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="team-item item-right">
-                    <div class="container">
                         <img src="{% static 'css/images/first.jpg' %}" alt="" style="width:500px;height:346px;">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="portfolio">
-        <img src="{% static 'css/images/image1.jpg' 'fill'  %}" alt="" style="width:1500px;">
+    <div class="private">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="know">
+                    <img src="{% static 'css/images/home.jpg' %}" alt="" style="width:1500px;height:600px;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="text-block">
+                    <h4 style="text-align:right">
+                        HOME TECHNOLOGY PORTFOLIO
+                    </h4>
+                    <p style="text-align:right">A living testimony to beautifully crafted, technologically enhanced households</pstyle="text-align:right">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {%endblock%}

@@ -1,10 +1,74 @@
 ﻿section.portfolio_page container-fluid {
 }
-.p1 {
+.container5 {
+    position: absolute;
+}
+.text-block {
+    position: absolute;
+    background-color: black;
+    color: white;
+}
+.G1 {
     position: absolute;
     width: 430px;
     height: 430px;
     left: 509px;
-    top: 1916px;
+    top: 3000px;
     background: rgba(126, 202, 159, 0.29);
+}
+.private {
+    height: 200px;
+    width: 115%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1920px;
+    min-width: 480px;
+}
+.m1 {
+    position: absolute;
+    width: 251px;
+    height: 224px;
+    left: 133px;
+    top: 2116px;
+    down:415px;;
+}
+.m2 {
+    position: absolute;
+    width: 430px;
+    height: 299px;
+    left: 409px;
+    top: 3000px;
+    background: rgba(126, 202, 159, 0.29);
+}
+.m3 {
+    position: absolute;
+    width: 198px;
+    height: 224px;
+    left: 180px;
+    right:500px;
+    top: 1991px;
+    bottom:500px;
+}
+.m4 {
+    position: left;
+    width: 251px;
+    height: 382px;
+    left: 2000px;
+    top: 2000px;
+    padding-bottom: 100px;
+    margin-bottom: 3000px;
+    margin-top:2000px;
+}
+.m5 {
+    position:50% 50%;
+    width: 288px;
+    height: 184px;
+    left: 408px;
+    top: 2240px;
+    bottom: 1000px;
+    margin-
+    padding-bottom: 2000px;
+    float:left;
 }
