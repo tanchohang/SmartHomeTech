@@ -1,48 +1,13 @@
-section.login_page container-fluid {
-}
-/* Container holding the image and the text */
-.container {
-    text-align: center;
-    color: white;
-    position: absolute;
-    width: 1440px;
-    height: 890px;
-    left: 0px;
-    top: 0px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+section.login_page {
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform: left;
+aside {
 }
 
-.Rectangle25 {
-    position: absolute;
-    width: 1440px;
-    height: 890px;
-    left: 0px;
-    top: 0px;
-}
-
-.aside {
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    left: 208px;
-    top: 61px;
-    background: #FFFFFF;
-    position: center;
-}
-
-    .aside.login_img {
-        height: 100px;
-        width: 100px;
-        background-color:mediumseagreen;
+  . aside.login_img {
+        height: 100vh;
+        width: 50vw;
+        background-color: blueviolet;
     }
 
 .form .heading {
@@ -60,19 +25,13 @@ section.login_page container-fluid {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 482px;
-    height: 768px;
-    left: 750px;
-    top: 61px;
-    background: #F4F8FC;
 }
 
-aside form {
+.aside form {
     margin-top: 30px;
     text-align: center;
 }
 
     aside form .form-control {
-        width: 500px;
+        width: 400px;
     }

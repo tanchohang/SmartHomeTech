@@ -1,99 +1,39 @@
-section.register_page container-fluid {
+section.Register_page {
 }
-.outline {
-    width: 300px;
-    border: 45px solid green;
-    padding: 50px;
-    margin: 20px;
-    position: absolute;
-    width: 1440px;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
+.outline{
 }
-.register-photo {
-    background: #f1f7fc;
-    padding: 80px 0
+aside {
 }
 
-    .register-photo .image-holder {
-        display: table-cell;
-        width: auto;
-        background: url('file:///C:\Users\LEKHANA\Desktop\SmartHomeTech\src\static\css\images\r1.jpg');
-        );
-        background-size: cover
+    aside.login_img {
+        height: 100vh;
+        width: 50vw;
+        background-color: white;
+        left:250px;
     }
 
-    .register-photo .form-container {
-        display: table;
-        max-width: 900px;
-        width: 90%;
-        margin: 0 auto;
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1)
-    }
-
-    .register-photo form {
-        display: table-cell;
-        width: 400px;
-        background-color: #ffffff;
-        padding: 40px 60px;
-        color: #505e6c
-    }
-
-@media (max-width:991px) {
-    .register-photo form {
-        padding: 40px
-    }
+.form .heading {
+    text-align: center;;
 }
 
-.register-photo form h2 {
-    font-size: 24px;
-    line-height: 1.5;
-    margin-bottom: 30px
+.form .logo {
+    width: 40px;
+    height: 40px;
+    background-color: blueviolet;
 }
 
-.register-photo form .form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #dfe7f1;
-    border-radius: 0;
-    box-shadow: none;
-    outline: none;
-    color: inherit;
-    text-indent: 0px;
-    height: 40px
+.login_page aside.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.register-photo form .form-check {
-    font-size: 13px;
-    line-height: 20px
-}
-
-.register-photo form .btn-primary {
-    background: green;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 35px;
-    text-shadow: none;
-    outline: none !important
-}
-
-    .register-photo form .btn-primary:hover,
-    .register-photo form .btn-primary:active {
-        background: green
-    }
-
-    .register-photo form .btn-primary:active {
-        transform: translateY(1px)
-    }
-
-.register-photo form .already {
-    display: block;
+.aside form {
+    margin-top: 30px;
     text-align: center;
-    font-size: 12px;
-    color: #6f7a85;
-    opacity: 0.9;
-    text-decoration: none
 }
+
+    aside form .form-control {
+        width: 400px;
+    }
