@@ -1,0 +1,21 @@
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/navbar.css'%}">
+
+{%endblock%}
+<div class="navbar">
+    <div class="title"><h6>Dashboard</h6></div>
+    
+    <div class="dropdown">
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span>John Doe</span> <i class="fas fa-user-circle"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/dashboard/profile/">Profile</a>
+          <a class="dropdown-item" href="#">Another action</a><hr/>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </div>
+</div>

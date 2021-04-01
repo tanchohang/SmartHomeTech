@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+}
+section{
+    width: 100vw;
+}
+nav{
+    width: 100vw;
+}
+aside{
+    background-color: #174B2E;
+}

@@ -1,0 +1,18 @@
+ul li {
+    list-style: none;
+}
+ul li a{
+    text-decoration: rgb(54, 53, 53);
+}
+ul li a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.message-detail form .reply-input{
+    height: 30px;
+}
+.subject{
+
+}
