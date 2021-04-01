@@ -13,3 +13,6 @@ def profile(request):
 
 def messages(request):
     return render(request, 'dashboard/user/messages.html')
+
+def message_detail(request):
+    return render(request, 'dashboard/user/message-detail.html')

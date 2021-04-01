@@ -1,4 +1,50 @@
 {% extends 'dashboard/user/user.html' %}
+
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/messages.css'%}">
+
+{%endblock%}
+
 {%block content%}
-Message
+
+
+<h6>Conversations</h6>
+<ul>
+    <li>
+        <a class="card  p-3 bg-white rounded" href="message-detail/">
+                <div class="info">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="user-name font-weight-bold">John Doe</span>
+                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+                </div>
+                <div class="message_preview ml-4">preview of message goes here......</div>       
+        </a>
+    </li>
+    <li>
+        <a class="card  p-3 bg-white rounded" href="message-detail/">
+                <div class="info">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="user-name font-weight-bold">John Doe</span>
+                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+                </div>
+                <div class="message_preview ml-4">The following settings are available: preview of message goes here......</div>       
+        </a>
+    </li><li>
+        <a class="card  p-3 bg-white rounded" href="message-detail/">
+                <div class="info">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="user-name font-weight-bold">John Doe</span>
+                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+                </div>
+                <div class="message_preview ml-4">preview of message goes here......</div>       
+        </a>
+    </li>
+
+
+</ul>
+
+
+
 {%endblock%}

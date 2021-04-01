@@ -1,10 +1,11 @@
 
 .sidebar{
     /* background-color: #174B2E; */
-    /* width: 287px; */
+    width: 217px;
     height: 100vh;
     color: beige;
     position: fixed;
+
 }
 .profile{
     width: 200px;

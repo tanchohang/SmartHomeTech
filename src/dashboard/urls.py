@@ -7,6 +7,8 @@ urlpatterns = [
     path('profile/', views.profile),
 
     path('messages/', views.messages),
+    path('messages/message-detail/', views.message_detail),
+
 
 
 ]
