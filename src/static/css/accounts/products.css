@@ -67,22 +67,13 @@ int
 .text box {
     border-style: solid;
     border-color: #287EC7;
-    padding: 1em
+    padding: 1em;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid red;
 }
-.text {
-    background: transparent;
-    vertical-align: top;
-    display: table-cell;
-    padding: 8px 0 0;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    margin-top: 50px;
-    margin-left: 350px;
-    vertical-align: middle;
-    float: right;
-    Font: Work Sans;
-}
+
 
 
 .container {
