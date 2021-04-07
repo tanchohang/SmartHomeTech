@@ -1,0 +1,87 @@
+{% extends 'dashboard/user/user.html' %}
+
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/message.css'%}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
+
+{%endblock%}
+
+{%block content%}
+<div class="message-detail">
+    <h5 class="subject">Subject of the message</h5>
+    <ul>
+        <li class="card p-3 mb-5 bg-white rounded">
+            <div class="info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name font-weight-bold">John Doe</span>
+                <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+            </div>
+            <div class="message_preview ml-4">Hi,
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa egestas ut semper tellus egestas felis.
+                Eu lectus lorem in aliquam, ac, pharetra nibh vitae. Posuere dui nibh eu mauris. Aliquet sed euismod
+                risus at platea feugiat eleifend. Sem accumsan sem et tempor tortor aliquet.
+                Pharetra, egestas quis enim varius massa. Gravida adipiscing lobortis eu volutpat sagittis integer vel
+                aliquam. Et pellentesque placerat imperdiet et sed. Integer congue faucibus interdum mauris volutpat.
+                Vestibulum, ac diam fermentum, volutpat, nisl libero. Nec, eget feugiat scelerisque sollicitudin urna,
+                dis dis quis.
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Appointment
+                  </button>
+                
+                <p>  kind regards<br>
+                john murry</p>
+            </div>
+            <li class="card p-3 mb-5 bg-white rounded">
+                <div class="info">
+                    <div class="float-right">
+                        <span class="user-name font-weight-bold">Jane Doe</span>
+                        <i class="fas fa-user-circle"></i>
+    
+                    </div>
+                    <span class="timestamp text-secondary">Monday 09/03/2021 09:05 AM</span>
+                </div>
+                <div class="message_preview ml-4">Hi,
+    
+                </div>
+    
+            </li>
+
+        </li>
+        
+    </ul>
+    <form>
+        <li class="card p-3 mb-5 bg-white rounded">
+            <div class="info">
+                <div class="">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="user-name font-weight-bold">Jane Doe</span>
+                    <div><span class="user-name font-weight-normal ml-3">Subject of the message</span></div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <textarea class="form-control reply-input" name="reply" rows="5"></textarea>
+                <div class=" action-buttons">
+                    <button class="btn btn-primary mt-3">Send</button>
+                    <a class="btn btn-light"><i class="fas fa-paperclip"></i></a>
+                </div>
+               
+              </div>
+
+        </li>
+        
+    </form>
+</div>
+
+
+
+
+<!-- Modal -->
+{%include 'dashboard/user/appointment.html'%}
+
+{%endblock%}
+
+{%block script%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
+{%endblock%}

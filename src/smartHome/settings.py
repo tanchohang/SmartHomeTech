@@ -126,3 +126,6 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('static')
 ]
+
+
+CSRF_COOKIE_DOMAIN = None

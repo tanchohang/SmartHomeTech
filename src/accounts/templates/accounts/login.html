@@ -13,10 +13,11 @@
                 <img class="logo">
                 <h3>Sign In</h3>
             </div>
-            <form>
+            <form method="POST" action="">
+              {%csrf_token%}
+              
                 <div class="form-group ">
-                  <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                  
+                  <input type="text" class="form-control" name="username" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group ">
                   <input type="password" class="form-control" name="password" id="password" placeholder="Password">
