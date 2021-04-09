@@ -1,14 +1,37 @@
 section.login_page {
+    width:100%;
+    height:100%;
 }
-.bg{
-       background-size: cover;
-       background-repeat:no-repeat;
-       background-size:1800px 900px;
-       background-position:fixed;
+.logout {
+    border: 100px solid white;
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    left: 96px;
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
+}
+.button {
+    background-color: #7eca9f; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    left: 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 .aside {
     position: absolute;
-    width: 542px;
+    width: 0px;
     height: 768px;
     left:-20px;
     top: 61px;
@@ -17,23 +40,25 @@ section.login_page {
 .log_imge {
     position: absolute;
     width: 0px;
-    height: 768px;
-    left: 520px;
-    right:12px;
+    height: 578px;
+    left: 20px;
+    right: 120px;
     top: 61px;
-    background:blue;
+   background: #7ECA9F;
 }
 .form1 {
     text-align: center;
-    left: 130px;
-    right:
-    min-width: 320px;
-    max-width: 475px;
+    left: -500px;
+    right: 280px;
+    width: 20%;
     background: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
 }
-.aside form1.form-control {
-    width: 0px;
+.aside form1 {
+    width: 300px;
+    height:300px;
+    left: -500px;
+    right: 280px;
 }
