@@ -1,9 +1,33 @@
-<h3>Register</h3>
+{% extends 'accounts/main.html' %}
 
-<form method="POST" action="">
-    {%csrf_token%}
-    {{form.as_p}}
+{% block title %}Register{% endblock %}
 
-<input type="submit" value="submit"/>
+{%block content%}
 
-</form>
+{% load crispy_forms_tags %}
+
+<section class="login_page container-fluid">
+    <div class="row">
+        <aside class="login_img col-sm">
+        
+        </aside>
+        <aside class="form col-sm">
+            <div class="heading">
+                <img class="logo">
+                <h3>Register</h3>
+            </div>
+            <form method="POST" action="">
+                {%csrf_token%}
+                {{form|crispy}}
+            
+            <input type="submit" value="submit"/>
+            
+            </form>
+        </aside>
+        
+    </div>
+    
+</section>
+
+
+{%endblock%}
