@@ -1,40 +1,35 @@
+
 section.login_page {
 }
-body {
-    background-image: url(http://www.goturkeytourism.com/assets/hero/xwaterfalls-turkey.jpg.pagespeed.ic.St4Hoq28sZ.jpg);
-    background-size: cover;
-    margin: 0px;
-    padding: 0px;
-}
-
-.form-box {
-    top: 50%;
-    left: 50%;
+.logout{
+    border: 45px solid #7eca9f;
     position: absolute;
-    width: 500px;
-    height: 400px;
-    margin-top: -200px;
-    background: rgba(255, 0, 0, 0.5);
-    margin-left: -250px;
-    padding: 20px 30px;
-    line-height: 50px;
+    width: 1440px;
+    height: 890px;
+    left: 0px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
-
-    .form-box .form-group label {
-        color: #fff;
-    }
-
-    .form-box .form-group input {
-        border-radius: 0px;
-        height: 35px;
-        background: none;
-        color: #fff;
-    }
-
-.submit-btn {
-    border-radius: 0px;
-    background: #fff !important;
-    color: red !important;
-    padding: 10px 25px;
-    font-weight: 600
+.aside {
+    position: absolute;
+    width: 542px;
+    height: 768px;
+    left: 208px;
+    top: 61px;
+    background: #FFFFFF;
+}
+.log_imge {
+    position: absolute;
+    width: 300px;
+    height: 768px;
+    left: 200px;
+    top: 61px;
+    margin-top:-40px;
+    background: #FFFFFF;
+}
+.form1{
+    text-align: center;
+    left: -30px;
 }
