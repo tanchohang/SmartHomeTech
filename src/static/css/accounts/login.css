@@ -31,7 +31,7 @@ section.login_page {
 }
 .aside {
     position: absolute;
-    width: 0px;
+    width: -30px;
     height: 768px;
     left:-20px;
     top: 61px;
@@ -41,16 +41,17 @@ section.login_page {
     position: absolute;
     width: 0px;
     height: 578px;
-    left: 20px;
-    right: 120px;
+    left: -15px;
+    right: 20px;
     top: 61px;
    background: #7ECA9F;
 }
 .form1 {
     text-align: center;
-    left: -500px;
+    left: -400px;
     right: 280px;
     width: 20%;
+    padding:10px;
     background: #fff;
     position: absolute;
     top: 50%;
