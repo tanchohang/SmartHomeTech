@@ -133,7 +133,15 @@ int
     font-size: 200%
 }
 <!--
---------------- -->
+---------------brands-->
+.brands {
+    position: absolute;
+    width: 1440px;
+    height: 842px;
+    left: 0px;
+    top: 3378px;
+    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
+}
 .post {
     position: absolute;
     width: 1440px;

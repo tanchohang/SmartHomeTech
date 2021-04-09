@@ -61,6 +61,17 @@ section.Register_page {
     left:-30px;
 }
 
-    aside form .form-control {
+    .aside form .form-control {
         width: 200px;
     }
+.button {
+    background-color: #7eca9f; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    left:70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

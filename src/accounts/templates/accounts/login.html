@@ -5,46 +5,45 @@
 {% block title %}Login{% endblock %}
 
 {%block content%}
-<section="login_page">
+<section ="login_page">
     <div class="logout">
-        <div style="background-image: url({% static 'css/images/Rectangle 25.jpg' %});">
-            <div class="row">
+        <div class="row">
+            <div class="cotainer8">
                 <aside class="log_imge col-sm">
                     <h1>Welcome To SmartHome</h1>
                     <p>
                         Your smart home is just a few steps away
                     </p>
                 </aside>
-                <aside class="form col-sm">
-                    <div class="heading">
-                        <h1 style="text-align:left">Sign In</h1>
-                    </div>
-                    <form1>
-                        <div class="form-group ">
-                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-
-                        </div>
-                        <div class="form-group ">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input " id="contractor" name="contractor">
-                            <label class="form-check-label" for="contractor">Contractor</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit">Log In</button>
-                        <div>
-                            <p>
-                                <span>
-                                    Dont Have an account?
-                                    <a class="form-check" href='/register'>Register</a>
-                                </span>
-                            </p>
-                        </div>
-                    </form1>
-                </aside>
             </div>
+            <aside class="form1 col-sm">
+                <div class="heading">
+                    <h1 style="text-align:left">LOGIN</h1>
+                </div>
+                <form1>
+                    <div class="form-group ">
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+                    </div>
+                    <div class="form-group ">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input " id="contractor" name="contractor">
+                        <label class="form-check-label" for="contractor">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit">LOG IN</button>
+                    <div>
+                        <p>
+                            <span>
+                                Dont Have an account?
+                                <a class="form-check" href='/register'>Register</a>
+                            </span>
+                        </p>
+                    </div>
+                </form1>
+            </aside>
         </div>
+    </div>
 </section>
-
-
 {%endblock%}
