@@ -14,3 +14,7 @@ nav{
 aside{
     background-color: #174B2E;
 }
+
+.asteriskField{
+    display: none;
+}

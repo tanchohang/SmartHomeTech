@@ -38,9 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'dashboard'
+    'dashboard',
+    'crispy_forms',
+    'tempus_dominus',
+
 
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,3 +130,6 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('static')
 ]
+
+
+CSRF_COOKIE_DOMAIN = None

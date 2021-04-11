@@ -22,18 +22,7 @@
                 <span class="timestamp text-secondary float-right">{{message.created}}</span>
             </div>
             <div class="message_preview ml-4">
-                        {%if quote%}   
-                        <h5>Quote</h5>
-                        <p><b>Bedrooms:</b>{{quote.bedrooms}}</p>
-                        <p><b>system_required:</b>{{quote.system_required}}</p>
-                        <p><b>system_control:</b>{{quote.system_control}}</p>
-                        <p><b>description:</b>{{quote.description}}</p>
-                        {%else%}
-                        {{message.body}}     
-
-                        {%endif%}
-
-                </table>
+                {{message.body}}
             </div>
         </li>
 
@@ -137,6 +126,11 @@
     </form>
 </div>
 
+
+
+
+<!-- Modal -->
+{%include 'dashboard/user/appointment.html'%}
 
 {%endblock%}
 

@@ -1,14 +1,12 @@
 from django.shortcuts import render
 
+from .auth import *
+
 # Create your views here.
 
 
 def home(request):
     return render(request, 'accounts/landing.html', {'include': True})
-
-
-def login(request):
-    return render(request, 'accounts/login.html', {'include': False})
 
 
 def products(request):
@@ -29,6 +27,3 @@ def about(request):
 
 def estimator(request):
     return render(request, 'accounts/estimator.html')
-
-
-
