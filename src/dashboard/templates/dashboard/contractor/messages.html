@@ -1,6 +1,7 @@
-{% extends 'dashboard/user/user.html' %}
+{% extends './user.html' %}
 
 {%load static%}
+{% load crispy_forms_tags %}
 
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/messages.css'%}">
@@ -10,40 +11,56 @@
 {%block content%}
 
 
-<h6>Conversations</h6>
+<div class="clearfix">
+
+<h3 class="d-inline">Conversations</h3>
+<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#new">
+    New Message
+  </button>
+</div>
 <ul>
+    {%for message in messages%}
     <li>
-        <a class="card  p-3 bg-white rounded" href="message-detail/">
+        <a class="card  p-3 bg-white rounded" href="{{message.id}}">
                 <div class="info">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">John Doe</span>
-                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+                    <span class="user-name font-weight-bold">{{message.creator}}</span>
+                
+                    <span class="timestamp text-secondary float-right">{{message.created}}</span>
+    
                 </div>
-                <div class="message_preview ml-4">preview of message goes here......</div>       
-        </a>
-    </li>
-    <li>
-        <a class="card  p-3 bg-white rounded" href="message-detail/">
-                <div class="info">
-                    <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">John Doe</span>
-                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
-                </div>
-                <div class="message_preview ml-4">The following settings are available: preview of message goes here......</div>       
-        </a>
-    </li><li>
-        <a class="card  p-3 bg-white rounded" href="message-detail/">
-                <div class="info">
-                    <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">John Doe</span>
-                    <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
-                </div>
-                <div class="message_preview ml-4">preview of message goes here......</div>       
+                <div class="message_preview ml-4">{{message.subject}}</div>       
         </a>
     </li>
 
-
+    {%endfor%}
 </ul>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create A Message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" action="">
+            {%csrf_token%}
+        <div class="modal-body">
+            {{ form|crispy }}
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="Send"/>
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
 
 
 

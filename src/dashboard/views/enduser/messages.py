@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from ..models import Message, Reply, Appointment
-from django.contrib.auth.models import User
-from ..forms import MessageForm, AppointmentForm
+from dashboard.models import Message, Reply, Appointment
+# from django.contrib.auth.models import User
+from dashboard.forms import MessageForm, AppointmentForm
+
+import ast
 
 
 def messages(request):
@@ -12,10 +14,11 @@ def messages(request):
             instance = form.save(commit=False)
             instance.creator = request.user
             instance.save()
-            return redirect('/dashboard/messages')
+            return redirect('/user/messages')
     else:
         form = MessageForm()
         messages = Message.objects.filter(creator=request.user.id)
+
         return render(request, 'dashboard/user/messages.html', {'messages': messages, 'form': form})
 
 
@@ -30,18 +33,22 @@ def message_detail(request, id):
         reply.save()
 
         replies = Reply.objects.filter(message=id)
-        return redirect('/dashboard/messages/'+id)
+        return redirect('/user/messages/'+id)
     else:
         appointmentForm = AppointmentForm()
         message = Message.objects.get(id=id)
+        quote = {}
+        if message.quote:
+            quote = ast.literal_eval(message.body)
+
         replies = Reply.objects.filter(message=id)
 
-        return render(request, 'dashboard/user/message-detail.html', {'message': message, 'replies': replies, 'user': request.user})
+        return render(request, 'dashboard/user/message-detail.html', {'message': message, 'replies': replies, 'user': request.user, 'quote': quote})
 
 
 def message_delete(request, id):
     message = Message.objects.filter(id=id).delete()
-    return redirect('/dashboard/messages')
+    return redirect('/user/messages')
 
 
 def appointment(request):
@@ -58,7 +65,7 @@ def appointment(request):
             # appointment.save()
             print(type(form.cleaned_data['date']))
 
-        return redirect('/dashboard/appointment')
+        return redirect('/user/appointment')
 
     else:
         form = AppointmentForm()

@@ -1,4 +1,4 @@
-{% extends 'dashboard/user/user.html' %}
+{% extends './user.html' %}
 
 {%load static%}
 
@@ -14,17 +14,26 @@
     <a href="/dashboard/messages/{{message.id}}/delete" class="text-danger"><i class="fas fa-trash"></i></a>
     <ul>
 
+        
 
         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
+                <div class="float-right">
+                    <span class="user-name font-weight-bold">{{message.creator}}</span>
+
                 <i class="fas fa-user-circle"></i>
-                <span class="user-name font-weight-bold">{{message.creator}}</span>
-                <span class="timestamp text-secondary float-right">{{message.created}}</span>
             </div>
-            <div class="message_preview ml-4">
+
+                <span class="timestamp text-secondary">{{message.created}}</span>
+            </div>
+            <div class="message_preview ml-4 ">
+                <div class="float-right mr-3">
+
                 {{message.body}}
+                </div>
             </div>
         </li>
+    
 
         {%for reply in replies%}
         
@@ -33,6 +42,7 @@
             <li class="card p-3 mb-5 bg-white rounded">
                 <div class="info">
                     <i class="fas fa-user-circle"></i>
+    
                     <span class="user-name font-weight-bold">{{reply.author}}</span>
                     <span class="timestamp text-secondary float-right">{{reply.created}}</span>
                 </div>
@@ -129,8 +139,7 @@
 
 
 
-<!-- Modal -->
-{%include 'dashboard/user/appointment.html'%}
+
 
 {%endblock%}
 

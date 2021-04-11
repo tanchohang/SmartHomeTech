@@ -1,122 +1,94 @@
-{% extends 'dashboard/user/user.html' %}
+{% extends './user.html' %}
 {%load static%}
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/quotes.css'%}">
 
 {%endblock%}
 {%block content%}
-<form method="POST">
-{%csrf_token%}
-    <div class="survey card">
-        <div class="card-body">
-            <h6 class="card-title">Property Survey</h6>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select class="form-control" id="rooms" name="bedrooms">
-                        <option  selected disabled>How many bedrooms does your property have?</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                </div>
-          </div>
+  
+  <div class="">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>user</th>
+          <th>Appointment</th>
+          
+          <th>Confirmed</th>
+          
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      {%for quote in quotes%}
+       
+      <td>
+        <span>
+          {{quote.user}}
+        </span>
+      </td>
+
+      <td>
+        <span>
+          {{quote.appointment}}
+        </span>
+      </td>
+
+      <td>
+        <span>
+          {%if quote.is_confirmed%}
+          <a href="" class="btn btn-success"><i class="fas fa-check text-success"></i></a>
+          {%else%}
+          <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+
+          {%endif%}
+        </span>
+      </td>
+      <td>
+      <span>
+        <a class="btn btn-sm btn-outline-danger"><i class="far fa-calendar-times text-danger"></i></a>
+        <a class="btn btn-sm btn-outline-primary text-primary" data-toggle="modal" data-target="#exampleModal"><i class="far fa-eye"></i></a>
+        <button class="btn btn-sm btn-outline-primary text-primary" ><i class="fas fa-check"></i></button>
+
+        
+
+      </span>
+      </td>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Quote View</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Quote</h5>
+                        <p><b>Bedrooms:</b>{{quote.bedrooms}}</p>
+                        <p><b>system_required:</b>{{quote.system_required}}</p>
+                        <p><b>system_control:</b>{{quote.system_control}}</p>
+                        <p><b>description:</b>{{quote.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="card system">
-        <div class="card-body">
-            <h6 class="card-title">System Request</h6>
 
-            <div class="form-check">
-                <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_required" value="entertainment" id="entertainment">
-                    <label class="form-check-label" for="entertainment">
-                    <img class="card-img-top" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title  font-weight-bold">Entertainment</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-                  <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_required" value="heating" id="heating">
-                    <label class="form-check-label" for="heating">
-                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title  font-weight-bold">Heating</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-                  <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_required" value="lighting" id="lighting">
-                    <label class="form-check-label" for="lighting">
-                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title  font-weight-bold">Lighthing</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-                  <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_required" value="Security" id="Security">
-                    <label class="form-check-label" for="Security">
-                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title  font-weight-bold">Security</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="card control">
-        <div class="card-body">
-            <h6 class="card-title">System Control</h6>
+      {%endfor%}
+    </tbody>
 
-            <div class="form-check">
-                <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_control" value="voice" id="voice_control">
-                    <label class="form-check-label" for="voice_control">
-                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title">Voice</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-                  <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_control" value="app" id="app">
-                    <label class="form-check-label" for="app">
-                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
-                    <div class="card-body">
-                      <h6 class="card-title ">App</h6>
-                      <a href="#" class="">more>></a>
-                    </div>
-                    </label>
-                  </div>
-                  
-            </div>
-
-            </div>
-            </div>
-    
-
-    <div class="card description">
-        <div class="card-body">
-            <h6 class="card-title">Description</h6>
-
-            <div class="form-check">
-                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
-            </div>
-            </div>
-        </div>
-        <input type="submit" value="Request" class="btn btn-primary  float-right"/>
-
-</form>
+    </table>
+  </div>
 
 
 {%endblock%}

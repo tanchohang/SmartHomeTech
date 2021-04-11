@@ -1,24 +1,24 @@
-{% extends 'dashboard/user/user.html' %}
+{% extends './user.html' %}
 {%load static%}
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/quotes.css'%}">
 
 {%endblock%}
 {%block content%}
-<form>
-
+<form method="POST">
+{%csrf_token%}
     <div class="survey card">
         <div class="card-body">
             <h6 class="card-title">Property Survey</h6>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select class="form-control" id="rooms">
+                    <select class="form-control" id="rooms" name="bedrooms">
                         <option  selected disabled>How many bedrooms does your property have?</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                       </select>
                 </div>
           </div>
@@ -30,7 +30,7 @@
 
             <div class="form-check">
                 <div class="card ">
-                    <input class="form-check-input" type="checkbox" value="" id="entertainment">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="entertainment" id="entertainment">
                     <label class="form-check-label" for="entertainment">
                     <img class="card-img-top" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
                     <div class="card-body">
@@ -40,7 +40,7 @@
                     </label>
                   </div>
                   <div class="card ">
-                    <input class="form-check-input" type="checkbox" value="" id="heating">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="heating" id="heating">
                     <label class="form-check-label" for="heating">
                     <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
                     <div class="card-body">
@@ -50,7 +50,7 @@
                     </label>
                   </div>
                   <div class="card ">
-                    <input class="form-check-input" type="checkbox" value="" id="lighting">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="lighting" id="lighting">
                     <label class="form-check-label" for="lighting">
                     <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
                     <div class="card-body">
@@ -60,7 +60,7 @@
                     </label>
                   </div>
                   <div class="card ">
-                    <input class="form-check-input" type="checkbox" name="system_control" value="" id="Security">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="Security" id="Security">
                     <label class="form-check-label" for="Security">
                     <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
                     <div class="card-body">
@@ -110,12 +110,13 @@
             <h6 class="card-title">Description</h6>
 
             <div class="form-check">
-                <textarea class="form-control" id="description" rows="3"></textarea>
+                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
             </div>
             </div>
         </div>
+        <input type="submit" value="Request" class="btn btn-primary  float-right"/>
+
 </form>
 
-        <button class="btn btn-primary float-right">Request</button>
 
 {%endblock%}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from ..forms import QuotesForm
-from ..models import Message
+from dashboard.forms import QuotesForm
+from dashboard.models import Message, Quote
 
 
 def quotes(request):
@@ -23,12 +23,12 @@ def quotes(request):
         # instance = form.save(commit=False)
         # instance.user = request.user
         # instance.save()
-
+        quote = Quote.objects.create(description=body, user=request.user)
         message = Message(
-            user=request.user, body=body, summary=summary)
+            creator=request.user, body=body, summary=summary, quote=quote)
 
         message.save()
-        return redirect('/dashboard/messages')
+        return redirect('/user/messages')
     else:
 
         return render(request, 'dashboard/user/quotes.html')

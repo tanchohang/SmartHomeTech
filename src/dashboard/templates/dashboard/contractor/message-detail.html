@@ -1,4 +1,4 @@
-{% extends 'dashboard/user/user.html' %}
+{% extends './user.html' %}
 
 {%load static%}
 
@@ -10,9 +10,59 @@
 
 {%block content%}
 <div class="message-detail">
-    <h5 class="subject">Subject of the message</h5>
+    <h5 class="subject">{{message.subject}}</h5>
+    <a href="/dashboard/messages/{{message.id}}/delete" class="text-danger"><i class="fas fa-trash"></i></a>
     <ul>
+
+
         <li class="card p-3 mb-5 bg-white rounded">
+            <div class="info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name font-weight-bold">{{message.creator}}</span>
+                <span class="timestamp text-secondary float-right">{{message.created}}</span>
+            </div>
+            <div class="message_preview ml-4">
+                {{message.body}}
+            </div>
+        </li>
+
+        {%for reply in replies%}
+        
+        {%if reply.author == user%}
+        
+            <li class="card p-3 mb-5 bg-white rounded">
+                <div class="info">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="user-name font-weight-bold">{{reply.author}}</span>
+                    <span class="timestamp text-secondary float-right">{{reply.created}}</span>
+                </div>
+                <div class="message_preview ml-4">
+                    {{reply.body}}
+                </div>
+            </li>
+        {%else%}
+
+            <li class="card p-3 mb-5 bg-white rounded">
+                <div class="info">
+                    <div class="float-right">
+                        <span class="user-name font-weight-bold">{{reply.author}}</span>
+                        <i class="fas fa-user-circle"></i>
+
+                    </div>
+                    <span class="timestamp text-secondary">{{reply.created}}</span>
+                </div>
+                <div class="message_preview ml-4 ">
+                    <div class="float-right mr-3">
+                        {{reply.body}}
+                    </div>
+                </div>
+
+            </li>
+            {%endif%}
+               
+        {%endfor%}
+
+        <!-- <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <i class="fas fa-user-circle"></i>
                 <span class="user-name font-weight-bold">John Doe</span>
@@ -33,6 +83,7 @@
                 <p>  kind regards<br>
                 john murry</p>
             </div>
+        </li>
             <li class="card p-3 mb-5 bg-white rounded">
                 <div class="info">
                     <div class="float-right">
@@ -46,24 +97,25 @@
     
                 </div>
     
-            </li>
+            </li> -->
 
-        </li>
+        
         
     </ul>
-    <form>
+    <form method="POST" action="">
+        {%csrf_token%}
         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <div class="">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">Jane Doe</span>
-                    <div><span class="user-name font-weight-normal ml-3">Subject of the message</span></div>
+                    <span class="user-name font-weight-bold">{{message.user}}</span>
+                    <div><span class="user-name font-weight-normal ml-3">{{message.subject}}</span></div>
                 </div>
             </div>
             <div class="form-group mt-3">
-                <textarea class="form-control reply-input" name="reply" rows="5"></textarea>
+                <textarea class="form-control reply-input" name="body" rows="5"></textarea>
                 <div class=" action-buttons">
-                    <button class="btn btn-primary mt-3">Send</button>
+                    <input type="submit" class="btn btn-primary mt-3" value="Send"/>
                     <a class="btn btn-light"><i class="fas fa-paperclip"></i></a>
                 </div>
                

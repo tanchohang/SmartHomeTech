@@ -1,0 +1,40 @@
+section.container-fluid{
+    max-width: 100vw;
+
+}
+header{
+    background-image:url(../images/Rectangle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 150px;
+    color: azure;
+    display: flex;
+    align-items: center;
+
+}
+header h3{
+    margin-left: 50px;
+}
+
+
+section.form{
+
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.submit-links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.submit-links .btn{
+    flex-basis: 100%;
+    /* width: 50px; */
+    margin-bottom: 20px;
+}

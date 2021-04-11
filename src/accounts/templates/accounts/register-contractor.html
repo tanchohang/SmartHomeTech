@@ -15,7 +15,8 @@
 <section class="container-fluid">
         <header class="row">
             
-                <h3>Registration for Users</h3>
+                <img class="">
+                <h3>Registration for Contractors</h3>
             
         </header>
 
@@ -31,6 +32,12 @@
                         </div>
                         <div class="col">
                             {{userForm.last_name|as_crispy_field}}
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{contractorForm.company_name|as_crispy_field}}
 
                         </div>
                     </div>
@@ -90,15 +97,9 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="submit-links">
                     <input type="submit" class="btn btn-primary" value="Register" />
-                    
-                    <a href="/contractor/register">Become a partner</a>
                 </div>
-                            
 
             </form>
         </section>

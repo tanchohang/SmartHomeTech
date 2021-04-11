@@ -1,6 +1,12 @@
 {% extends 'accounts/main.html' %}
 
+{%load static%}
 {% block title %}Login{% endblock %}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/login.css'%}">
+
+{%endblock%}
 
 {%block content%}
 <section class="login_page container-fluid">
