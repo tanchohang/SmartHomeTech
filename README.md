@@ -18,8 +18,11 @@ Smart Home Project - Placement 2021
 
 # Routes
 
-1. '/'
+1. '/register'
 2. '/login'
+3. '/user'
+4. '/contractor'
+5. '/host'
 
 # Admin Routes
 
