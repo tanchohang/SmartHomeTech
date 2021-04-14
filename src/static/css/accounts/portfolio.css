@@ -30,45 +30,53 @@
     position: absolute;
     width: 251px;
     height: 224px;
-    left: 233px;
+    left: 9580px;
+    right:8800px;
     top: 2116px;
-    down:415px;
+    bottom: -715px;
+    float:left;
+    margin-bottom: 90px;
+    padding:80px;
 }
 .m2 {
     position: absolute;
     width: 430px;
     height: 299px;
     left: 409px;
-    top: 3000px;
-    background: rgba(126, 202, 159, 0.29);
+    top: 8000px;
+    float:left;
 }
 .m3 {
     position: absolute;
     width: 198px;
     height: 224px;
-    left: 180px;
-    right:500px;
+    left: 862px;
     top: 1991px;
-    bottom:500px;
 }
 .m4 {
-    position: left;
-    width: 251px;
-    height: 382px;
-    left: 2000px;
-    top: 2000px;
-    padding-bottom: 100px;
-    margin-bottom: 3000px;
-    margin-top:2000px;
-}
-.m5 {
-    position:50% 50%;
+    position: absolute;
     width: 288px;
     height: 184px;
-    left: 408px;
+    left: 908px;
     top: 2240px;
-    bottom: 1000px;
-    margin-
-    padding-bottom: 2000px;
-    float:left;
+    float:right;
+}
+.m5 {
+    position: absolute;
+    width: 251px;
+    height: 382px;
+    left: 1084px;
+    top: 0px;
+    bottom:-50px;
+}
+.rectangle32 {
+    bottom: -50px;
+}
+.m6 {
+    position: absolute;
+    width: 340px;
+    height: 254px;
+    left: 720px;
+    top: 2240px;
+    border:1px solid white;
 }

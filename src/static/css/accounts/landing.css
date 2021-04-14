@@ -1,15 +1,24 @@
 section.landing_page container-fluid {
- 
+    overflow-x: hidden;
+    white-space:normal;
+}
+.background {
+    position: fixed;
+    max-width: NNNpx;
+    overflow-x: hidden;
+    white-space:normal;
 }
 .land {
-    height:200px;
-    width: 115%;
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
     max-width: 1920px;
     min-width: 480px;
+    overflow-x: hidden;
+    border: 5px dashed red;
+    height: 100%;
 }
 .landing{
     background-size:cover;
