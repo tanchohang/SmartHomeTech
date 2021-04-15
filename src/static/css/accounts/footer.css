@@ -1,7 +1,8 @@
 .footer-basic {
-    padding: 40px 0;
-    background-color:#7ECA9F;
+    padding: 50px 0;
+    background-color: #7ECA9F;
     color: #4b4c4d;
+    margin-bottom: 0;
 }
 
     .footer-basic ul {
@@ -29,7 +30,7 @@
 
     .footer-basic .social {
         text-align: center;
-        padding-bottom: 25px;
+        padding-bottom: 45px;
     }
 
         .footer-basic .social > a {

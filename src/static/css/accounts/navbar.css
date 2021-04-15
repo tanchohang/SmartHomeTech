@@ -8,7 +8,8 @@
 .button {
     background-color: white;
     border: none;
-    color: white;
+    color: black;
+    font:worksans;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
