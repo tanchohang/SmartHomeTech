@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from dashboard.models import Message, Reply, Appointment
 # from django.contrib.auth.models import User
-from dashboard.forms import MessageForm, AppointmentForm
+from dashboard.forms import MessageForm, AppointmentForm, FileForm
+from dashboard.models import MessageFiles
 
 import ast
 
@@ -10,16 +11,22 @@ def messages(request):
 
     if request.method == 'POST':
         form = MessageForm(request.POST)
-        if form.is_valid:
+        fileform = FileForm(request.POST, request.FILES)
+        files = request.FILES.getlist('files')
+        if form.is_valid() and fileform.is_valid():
             instance = form.save(commit=False)
             instance.creator = request.user
             instance.save()
+            for file in files:
+                file_instance = MessageFiles(files=file, message=instance)
+                file_instance.save()
             return redirect('/user/messages')
     else:
         form = MessageForm()
+        fileform = MessageForm()
         messages = Message.objects.filter(creator=request.user.id)
 
-        return render(request, 'dashboard/user/messages.html', {'messages': messages, 'form': form})
+        return render(request, 'dashboard/user/messages.html', {'messages': messages, 'form': form, 'fileform': FileForm})
 
 
 def message_detail(request, id):
