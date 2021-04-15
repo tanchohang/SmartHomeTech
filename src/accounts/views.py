@@ -11,14 +11,14 @@ def login(request):
     return render(request, 'accounts/login.html', {'include': False})
 
 def register(request):
-    return render(request, 'accounts/register.html', {'include': False})
+    return render(request, 'accounts/register.html', {'include': True})
 
 
 def services(request):
-    return render(request, 'accounts/services.html')
+    return render(request, 'accounts/services.html', {'include': True})
 
 def portfolio(request):
-    return render(request, 'accounts/portfolio.html')
+    return render(request, 'accounts/portfolio.html', {'include': True})
 
 
 def contact(request):

@@ -1,6 +1,5 @@
 {% extends 'accounts/main.html' %}
 {% load static %}
-
 {%block content%}
 <!-------Service-->
 <section class="products_page container-fluid">
@@ -24,13 +23,12 @@
              <br>
              </br>
          </div>
-    </div>
     <div class="down">
         <h1 style="text-align:center">Our Services </h1>
     </div>
     <div class="post-container">
         <div class="post-thumb">
-            <img src="{% static 'css/images/guy.jpg' %}" style="width:450px;height:450px;">
+            <img src="{% static 'css/images/guy.jpg' %}" style="width:350px;height:350px;">
         </div>
         <div class="post-content">
             <div class="Text-Box">
@@ -51,7 +49,7 @@
 
     <div class="post-container1">
         <div class="post-thumb1">
-            <img src="{% static 'css/images/guy.jpg' %}" style="width:450px;height:450px;"/>
+            <img src="{% static 'css/images/guy.jpg' %}" style="width:350px;height:350px;"/>
         </div>
         <div class="post-content1">
             <h3 class="post-title"></h3>
@@ -71,9 +69,9 @@
 
     <div class="post-container">
         <div class="post-thumb">
-            <img src="{% static 'css/images/guy.jpg' %}"   style="width:450px;height:450px;" />
+            <img src="{% static 'css/images/guy.jpg' %}"   style="width:350px;height:350px;"/>
         </div>
-        <div class="post-content">
+        <div class="post-cotainer">
             <h3 class="post-title"></h3>
             <h1> Smart Technology </h1>
             <p>
@@ -88,53 +86,52 @@
             </p>
         </div>
     </div>
-<!-----products from Trusted Brands--------------------------------------------------------------------------------------------------------->
-<div class="brands">
-    <div class="post">
-        <h1 style="text-align:center">Products from Trusted Brands</h1>
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="circle">
-                    <h4 style="text-align:center">JUNG</h4>
-                </div>
-                <div class="pro">
-                    <p>
-                        Intelligent, networked, sustainable, secure, <br>
-                        flexible our rooms and our requirements are changing.
-                    </p>
-                </div>
-            </div>
-            <br><br />
-            <div class="col-lg-4 col-md-4">
-                <div class="circle">
-                    <h4 style="text-align:center">
-                        GIRA
-                    </h4>
-                </div>
-                <div class="pro">
-                    <p>
-                        IThe Gira Company Driving innovation in electrical technology.
-                        Since 1905, Radevormwald-based family company Gira Giersiepen GmbH & Co. 
-                        KG has been shaping the electronics sector with smart solutions for intelligent building controlg.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="circle">
-                    <h5 style="text-align:center">
-                        BUSCH-JAGER
-                    </h5>
-                </div>
-                <div class="pro">
-                    <p>
-                        Busch-Jaeger is the market leader and has more than 140 years 
-                        of experience in the area of electrical installation technology.
-                        We have two manufacturing facilities in Germany.
-                    </p>
+            <div class="post">
+                <h1 style="text-align:center">Products from Trusted Brands</h1>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="circle">
+                            <h4 style="text-align:center">JUNG</h4>
+                        </div>
+                        <div class="pro">
+                            <p>
+                                Intelligent, networked, sustainable, secure, <br>
+                                flexible our rooms and our requirements are changing.
+                            </p>
+                        </div>
+                    </div>
+                    <br><br />
+                    <div class="col-lg-4 col-md-4">
+                        <div class="circle">
+                            <h4 style="text-align:center">
+                                GIRA
+                            </h4>
+                        </div>
+                        <div class="pro">
+                            <p>
+                                IThe Gira Company Driving innovation in electrical technology.
+                                Since 1905, Radevormwald-based family company Gira Giersiepen GmbH & Co.
+                                KG has been shaping the electronics sector with smart solutions for intelligent building controlg.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="circle">
+                            <h5 style="text-align:center">
+                                BUSCH-JAGER
+                            </h5>
+                        </div>
+                        <div class="pro">
+                            <p>
+                                Busch-Jaeger is the market leader and has more than 140 years
+                                of experience in the area of electrical installation technology.
+                                We have two manufacturing facilities in Germany.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </section>
  {%endblock%}

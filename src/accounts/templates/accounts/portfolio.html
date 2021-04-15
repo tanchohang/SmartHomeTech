@@ -1,16 +1,16 @@
 {% extends 'accounts/main.html' %}
 {% load static %}
 {%block content%}
-    <div class="row">
+<section class="products_page container-fluid">
         <div class="col-md-6">
             <img src="{% static 'css/images/image1.jpg' %}" alt="" style="width:1500px;">
         </div>
         <div class="col-sm-6">
             <div class="text-block">
                 <h4 style="text-align:Left">
-                    HOME TECHNOLOGY PORTFOLIO
+                    
                 </h4>
-                <p>A living testimony to beautifully crafted, technologically enhanced households</p>
+                <p></p>
             </div>
         </div>
     </div>
@@ -44,29 +44,36 @@
             </div>
         </div>
     </div>
+
     <div class="mid">
         <div class="row">
-            <div class="m1">
+            <div class="m4">
                 <img src="{% static 'css/images/Rectangle 29.jpg' %}" ;>
             </div>
-            <div class="m2">
-                <img src="{% static 'css/images/Rectangle 33.jpg' %}" ;>
-            </div>
-            <div class="m3">
-                <img src="{% static 'css/images/Rectangle 31.jpg' %}" ;>
-            </div>
-            <div class="m5">
-                <img src="{% static 'css/images/Rectangle 32.jpg' %}" ;>
-            </div>
             <br>
             </br>
-            <div class="m4">
-                <img src="{% static 'css/images/Rectangle 28.jpg' %}" ;>
+            <div class="col">
+                <div class="l1">
+                    <img src="{% static 'css/images/Rectangle 33.jpg' %}" ;>
+                </div>
+                </br>
+                <div class="m6">
+                    <img src="{% static 'css/images/Rectangle 28.jpg' %}" ;>
+                </div>
             </div>
-            <br>
-            </br>
-            <div class="m6">
-                <img src="{% static 'css/images/Rectangle 28.jpg' %}" ;>
+            <div class="col">
+                <div class="l1">
+                    <img src="{% static 'css/images/Rectangle 31.jpg' %}" ;>
+                </div>
+                </br>
+                <div class="l4">
+                    <img src="{% static 'css/images/Rectangle 27.jpg' %}" ;>
+                </div>
+            </div>
+                <div class="m5">
+                    <img src="{% static 'css/images/Rectangle 32.jpg' %}" ;>
+                </div>
             </div>
         </div>
+</section>
 {%endblock%}

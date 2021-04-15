@@ -1,9 +1,32 @@
+.logo-image {
+    width: 36px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+.button {
+    background-color: white;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {
+    background-color: white;
+    color: black;
+    border: 0px solid #4CAF50;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #333;
-
 }
-
     /* Navbar links */
     .topnav a {
         float: left;
