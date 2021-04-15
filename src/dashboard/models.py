@@ -17,13 +17,18 @@ class Message(models.Model):
     subject = models.CharField(max_length=150)
     body = models.TextField()
     summary = models.TextField(max_length=200)
-    files = models.FileField(upload_to='uploads/')
+    # files = models.FileField(upload_to='uploads/', null=True)
     # is_deleted = models.BooleanField(default=False)
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE)
     quote = models.OneToOneField(
         Quote, on_delete=models.CASCADE, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
+
+
+class MessageFiles(models.Model):
+    files = models.FileField(upload_to="uploads/", null=True)
+    message = models.ForeignKey(Message, on_delete=models.CASCADE)
 
 
 class Reply(models.Model):

@@ -1,7 +1,6 @@
 from django import forms
-from .models import Message
+from .models import Message, MessageFiles
 from tempus_dominus.widgets import DatePicker, TimePicker, DateTimePicker
-#
 
 
 class QuotesForm(forms.ModelForm):
@@ -15,6 +14,15 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ("subject", "body")
+
+
+class FileForm(forms.ModelForm):
+    class Meta:
+        model = MessageFiles
+        fields = ['files']
+        widgets = {
+            'files': forms.ClearableFileInput(attrs={'multiple': True}),
+        }
 
 
 class AppointmentForm(forms.Form):

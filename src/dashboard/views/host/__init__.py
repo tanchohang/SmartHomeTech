@@ -29,7 +29,8 @@ def profile(request):
 def messages(request):
 
     if request.method == 'POST':
-        form = MessageForm(request.POST)
+        form = MessageForm(request.POST, request.FILES)
+
         if form.is_valid:
             instance = form.save(commit=False)
             instance.creator = request.user
