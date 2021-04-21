@@ -1,4 +1,13 @@
-﻿<div class="footer-basic">
+﻿
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/footer.css'%}">
+{%endblock%}
+
+{%block content%}
+
+<div class="footer-basic">
     <footer>
         <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
         <ul class="list-inline">
@@ -11,3 +20,5 @@
         <p class="copyright">Smart Home © 2021</p>
     </footer>
 </div>
+
+{%endblock%}

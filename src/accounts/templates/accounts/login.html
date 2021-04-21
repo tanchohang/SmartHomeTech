@@ -1,49 +1,53 @@
+{% extends 'accounts/main.html' %}
+
+{%load static%}
+{% block title %}Login{% endblock %}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/login.css'%}">
 
 
-    {%load static%}
+{%endblock%}
 
-    {% block title %}Login{% endblock %}
-
-    {%block style%}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/accounts/login.css'%}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-    {%endblock%}
-
-    {%block content%}
-
-    <section class="login_page container-fluid">
-        <div class="row">
-            <aside class="login_img col-sm">
-
-            </aside>
-            <aside class="form col-sm">
-                <div class="heading">
-                    <img class="logo">
-                    <h3>Sign In</h3>
+{%block content%}
+<section class="login_page container-fluid">
+    <div class="row">
+        <aside class="login_img col-sm">
+        
+        </aside>
+        <aside class="form col-sm">
+            <div class="heading">
+                <img class="logo">
+                <h3>Sign In</h3>
+            </div>
+            <form method="POST" action="">
+              {%csrf_token%}
+              
+                <div class="form-group ">
+                  <input type="text" class="form-control" name="username" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
-                <form method="POST" action="">
-                    {%csrf_token%}
+                <div class="form-group ">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input " id="contractor" name="contractor">
+                  <label class="form-check-label" for="contractor">Contractor</label>
+                </div>
+                <button type="submit" class="btn btn-primary submit">Log In</button>
+                <div>
+                    <p>
+                        <span>
+                            Dont Have an account?
+                            <a class="form-check" href='/register'>Register</a>
+                        </span>
+                    </p>
+                </div>
+              </form>
+        </aside>
+        
+    </div>
+    
+</section>
 
-                    <div class="form-group ">
-                        <input type="text" class="form-control" name="username" id="email" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                    </div>
-                    <div class="form-group ">
-                        <input type="password" class="form-control" name="password1" id="password"
-                            placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input " id="contractor" name="contractor">
-                        <label class="form-check-label" for="contractor">Contractor</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary submit">Log In</button>
-                    <div>
 
-            </aside>
-        </div>
-
-
-    </section>
-    {%endblock%}
+{%endblock%}
