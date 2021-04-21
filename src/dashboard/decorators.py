@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
+from django.http import Http404
 
 
 def unauthenticated_user(view_func):
@@ -22,7 +23,7 @@ def allowed_users(allowed_groups=[]):
             if group in allowed_groups:
                 return view_func(request, *args, **kwargs)
             else:
-                return render(request, '../../404.html')
+                raise Http404("User Group  not allowed")
 
         return wrapper_func
     return decorator

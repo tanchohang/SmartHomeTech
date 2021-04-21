@@ -13,13 +13,9 @@ urlpatterns = [
 
     # Host URL
 
-    # path('host/', views.host.dashboard, name='host'),
+
     path('users/', views.host.users, name='users'),
-    # path('host/quotes/', views.host.quotes),
-    # path('host/profile/', views.host.profile),
-    # path('host/messages/', views.host.messages),
-    # path('host/messages/<id>/',
-    #      views.host.message_detail),
+
 
 
 
