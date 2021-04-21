@@ -1,0 +1,122 @@
+{% extends './user.html' %}
+{%load static%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/quotes.css'%}">
+
+{%endblock%}
+{%block content%}
+<form method="POST">
+{%csrf_token%}
+    <div class="survey card">
+        <div class="card-body">
+            <h6 class="card-title">Property Survey</h6>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                    <select class="form-control" id="rooms" name="bedrooms">
+                        <option  selected disabled>How many bedrooms does your property have?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                </div>
+          </div>
+    </div>
+
+    <div class="card system">
+        <div class="card-body">
+            <h6 class="card-title">System Request</h6>
+
+            <div class="form-check">
+                <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="entertainment" id="entertainment">
+                    <label class="form-check-label" for="entertainment">
+                    <img class="card-img-top" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title  font-weight-bold">Entertainment</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+                  <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="heating" id="heating">
+                    <label class="form-check-label" for="heating">
+                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title  font-weight-bold">Heating</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+                  <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="lighting" id="lighting">
+                    <label class="form-check-label" for="lighting">
+                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title  font-weight-bold">Lighthing</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+                  <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_required" value="Security" id="Security">
+                    <label class="form-check-label" for="Security">
+                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title  font-weight-bold">Security</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card control">
+        <div class="card-body">
+            <h6 class="card-title">System Control</h6>
+
+            <div class="form-check">
+                <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_control" value="voice" id="voice_control">
+                    <label class="form-check-label" for="voice_control">
+                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title">Voice</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+                  <div class="card ">
+                    <input class="form-check-input" type="checkbox" name="system_control" value="app" id="app">
+                    <label class="form-check-label" for="app">
+                    <img class="card-img-top" height="100" width="100" src="{%static 'css/images/Rectangle.jpg'%}" alt="Card image cap">
+                    <div class="card-body">
+                      <h6 class="card-title ">App</h6>
+                      <a href="#" class="">more>></a>
+                    </div>
+                    </label>
+                  </div>
+                  
+            </div>
+
+            </div>
+            </div>
+    
+
+    <div class="card description">
+        <div class="card-body">
+            <h6 class="card-title">Description</h6>
+
+            <div class="form-check">
+                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+            </div>
+            </div>
+        </div>
+        <input type="submit" value="Request" class="btn btn-primary  float-right"/>
+
+</form>
+
+
+{%endblock%}

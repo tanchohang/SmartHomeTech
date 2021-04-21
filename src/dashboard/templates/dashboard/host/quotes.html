@@ -1,0 +1,94 @@
+{% extends './user.html' %}
+{%load static%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/quotes.css'%}">
+
+{%endblock%}
+{%block content%}
+  
+  <div class="">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>user</th>
+          <th>Appointment</th>
+          
+          <th>Confirmed</th>
+          
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      {%for quote in quotes%}
+       
+      <td>
+        <span>
+          {{quote.user}}
+        </span>
+      </td>
+
+      <td>
+        <span>
+          {{quote.appointment}}
+        </span>
+      </td>
+
+      <td>
+        <span>
+          {%if quote.is_confirmed%}
+          <a href="" class="btn btn-success"><i class="fas fa-check text-success"></i></a>
+          {%else%}
+          <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+
+          {%endif%}
+        </span>
+      </td>
+      <td>
+      <span>
+        <a class="btn btn-sm btn-outline-danger"><i class="far fa-calendar-times text-danger"></i></a>
+        <a class="btn btn-sm btn-outline-primary text-primary" data-toggle="modal" data-target="#exampleModal"><i class="far fa-eye"></i></a>
+        <button class="btn btn-sm btn-outline-primary text-primary" ><i class="fas fa-check"></i></button>
+
+        
+
+      </span>
+      </td>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Quote View</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Quote</h5>
+                        <p><b>Bedrooms:</b>{{quote.bedrooms}}</p>
+                        <p><b>system_required:</b>{{quote.system_required}}</p>
+                        <p><b>system_control:</b>{{quote.system_control}}</p>
+                        <p><b>description:</b>{{quote.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      {%endfor%}
+    </tbody>
+
+    </table>
+  </div>
+
+
+{%endblock%}

@@ -1,57 +1,49 @@
-{% extends 'accounts/main.html' %}
 
-{% load static %}
-{% block navbar %}{% endblock %}
 
-{% block title %}Login{% endblock %}
+    {%load static%}
 
-{%block content%}
-<section ="login_page">
-    <div class="logout">
+    {% block title %}Login{% endblock %}
+
+    {%block style%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accounts/login.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    {%endblock%}
+
+    {%block content%}
+
+    <section class="login_page container-fluid">
         <div class="row">
-            <div class="cotainer8">
-                <aside class="log_imge col-sm">
-                    <h1 style="text-align:center">Welcome To SmartHome</h1>
-                    <p>
-                        Your smart home is just a few steps away
-                    </p>
-                </aside>
-            </div>
+            <aside class="login_img col-sm">
+
+            </aside>
             <aside class="form col-sm">
                 <div class="heading">
-                    <h3 style="text-align:left">Login</h3>
-                    <form>
-                        <div class="form-group ">
-                            <input type="First Name" class="form-control" name="First Name" id="Name" aria-describedby="emailHelp" placeholder="First Name">
+                    <img class="logo">
+                    <h3>Sign In</h3>
+                </div>
+                <form method="POST" action="">
+                    {%csrf_token%}
 
-                        </div>
-                        <div class="form-group ">
-                            <input type="Second Name" class="form-control" name="Second Name" id="Name" aria-describedby="emailHelp" placeholder="Second Name">
+                    <div class="form-group ">
+                        <input type="text" class="form-control" name="username" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                    </div>
+                    <div class="form-group ">
+                        <input type="password" class="form-control" name="password1" id="password"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input " id="contractor" name="contractor">
+                        <label class="form-check-label" for="contractor">Contractor</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit">Log In</button>
+                    <div>
 
-                        </div>
-                        <div class="form-group ">
-                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-
-                        </div>
-                        <div class="form-group ">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group ">
-                            <input type="phone number" class="form-control" name="phone number" id="number" placeholder="Phone number">
-                        </div>
-                        <button style="text-align:left" type="submit" class="button">Login</button>
-                        <div>
-                            <p>
-                                <span>
-                                    Dont Have an account?
-                                    </br>
-                                    <a class="form-check" href='/register'>Register</a>
-                                </span>
-                            </p>
-                        </div>
-                        </form1>
             </aside>
         </div>
-    </div>
-</section>
-{%endblock%}
+
+
+    </section>
+    {%endblock%}

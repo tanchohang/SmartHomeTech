@@ -1,0 +1,44 @@
+form{
+    width: 100%;
+}
+
+form > .card{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+}
+
+.system .card,.control .card{
+    width: 150px;
+    height: 180px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.card img{
+    /* position: relative; */
+    height: 100px;
+    width: 148px;
+}
+.card .card-body{
+    
+    text-align: center;
+}
+.form-check h6.card-title{
+    font-size: x-small;
+    /* font-weight: 100; */
+}
+
+.card .card-body a{
+    font-size: x-small;
+}
+
+.system .form-check .form-check-input,.control .form-check .form-check-input{
+    position: absolute;
+    left: 150px;
+}
+img{
+    
+}
+

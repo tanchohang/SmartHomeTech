@@ -1,0 +1,114 @@
+{% extends './user.html' %}
+{%load static%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/users.css'%}">
+
+{%endblock%}
+{%block content%}
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-users-tab" data-toggle="pill" href="#pills-users" role="tab"
+      aria-controls="pills-users" aria-selected="true">End-Users</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contractors-tab" data-toggle="pill" href="#pills-contractors" role="tab"
+      aria-controls="pills-contractors" aria-selected="false">Contractors</a>
+  </li>
+
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-home-tab">
+
+    <table class="table users">
+      <thead>
+        <tr>
+          <th>user</th>
+          <th>Contractor</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {%for enduser in endusers%}
+        <tr>
+          <td>
+            <span>
+              {{enduser.user}}
+            </span>
+          </td>
+
+          <td>
+            <span>
+              {%if user.contractor%}
+          <a href="" class="btn btn-success"><i class="fas fa-check text-success"></i></a>
+          {%else%}
+          <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+
+          {%endif%}
+            </span>
+          </td>
+          <td>
+            <span>
+              <a class="btn btn-outline-primary btn-sm" href="/user/profile">Profile</a>
+
+              <div class="dropdown d-inline">
+              <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assign</a>
+                
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  {%for contractor in contractors%}
+                    <li class="dropdown-item" href="#">{{contractor.user}}</a>
+                  {%endfor%}
+                  
+                </ul>
+              </div>
+
+            </span>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+
+    </table>
+  </div>
+  <div class="tab-pane fade" id="pills-contractors" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+    <table class="table contractors">
+      <thead>
+        <tr>
+          <th>user</th>
+          <th>status</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {%for contractor in contractors%}
+        <tr>
+          <td>
+            <span>
+              {{contractor.user}}
+            </span>
+          </td>
+
+          <td>
+            <span>
+              test
+            </span>
+          </td>
+          <td>
+            <span>
+              <a class="btn btn-outline-primary" href="/contractor/profile">Profile</a>
+            </span>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+{%endblock%}

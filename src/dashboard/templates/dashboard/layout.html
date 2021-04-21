@@ -17,47 +17,51 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/main.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/accounts/landing.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/accounts/login.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/accounts/register.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/accounts/footer.css'%}">
-    <link rel="stylesheet" type="text/css" href="{%static 'css/accounts/products.css'%}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    {%block style%}
-
-
-    {%endblock%}
-
+    
+    {%block style%}{%endblock%}
 
 </head>
-<body>
-    {% if include%}
+<body class="container-fluid p-0">
+<div class="row no-gutters">
+    <aside class="col-md-2">
+        {%block sidebar%}
+        {%endblock%}
+    </aside>
+    
+    <section class="col-md-10 mb-5" >
+        {%include 'dashboard/navbar.html'%}
 
-    <header class="test">
-        {% if include%}
-        {%include 'accounts/navbar.html'%}
-        {% endif %}
+        <div class="container">
+            <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/dashboard">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+          </nav>
+        <!-- /Breadcrumb -->
+        </div>
 
-    </header>
-    {% endif %}
+        <div class="container">
+            {%block content%}
+            {%endblock%} 
+        </div>
+
+          
+        
+    </section>
+</div>
 
 
-    {% block content %}
-
-    {% endblock %}
-
-    {% if include%}
-
-    <footer>
-        {%include 'accounts/footer.html'%}
-    </footer>
-    {% endif %}
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{%block script%}{%endblock%}
 </html>

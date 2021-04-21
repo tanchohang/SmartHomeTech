@@ -1,0 +1,68 @@
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/sidebar.css'%}">
+
+{%endblock%}
+
+
+<aside class="sidebar">
+    <div class="profile">
+        <span>Dashboard</span>
+    </div>
+
+    <div class="">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/host">
+              <i class="fas fa-tachometer-alt"></i>
+              <span class="">Overview</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/host/users">
+              <i class="fas fa-users"></i>
+              <span class="">Users</span>
+            </a>
+          </li><li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-project-diagram"></i>
+              <span class="">Projects</span>
+            </a>
+          </li><li class="nav-item">
+            <a class="nav-link" href="/host/quotes">
+              <i class="fas fa-tasks"></i>
+              <span class="">Quotes</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/host/profile">
+              <i class="fas fa-user"></i>
+              <span class="">Profile</span>
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="/host/messages">
+              <i class="fas fa-envelope"></i>
+              <span class="">Messages</span>
+            </a>
+          </li>
+        <hr/>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-cog"></i>
+            <span class="">Settings</span>
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-medal"></i>
+            <span class="">Subscriptions</span>
+          </a>
+        </li>
+        </ul>
+        
+
+      
+      </div>
+    
+</aside>

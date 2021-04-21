@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .auth import *
+
 # Create your views here.
 
 
@@ -7,15 +9,13 @@ def home(request):
     return render(request, 'accounts/landing.html', {'include': True})
 
 
-def login(request):
-    return render(request, 'accounts/login.html', {'include': False})
-
-def register(request):
-    return render(request, 'accounts/register.html', {'include': True})
+def products(request):
+    return render(request, 'accounts/products.html')
 
 
 def services(request):
     return render(request, 'accounts/services.html', {'include': True})
+
 
 def portfolio(request):
     return render(request, 'accounts/portfolio.html', {'include': True})
