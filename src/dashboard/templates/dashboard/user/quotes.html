@@ -6,6 +6,9 @@
 
 {%endblock%}
 {%block content%}
+
+{%if not request.user.quote%}
+
 <form method="POST">
 {%csrf_token%}
     <div class="survey card">
@@ -120,4 +123,13 @@
 </form>
 
 
+
+{%else%}
+
+<span class="alert alert-success">Quote already submitted</span>
+
+{{request.user.quote.description}}
+
+
+{%endif%}
 {%endblock%}

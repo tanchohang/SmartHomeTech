@@ -42,7 +42,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <span class="dropdown-item">Hi, </span>
-                <a class="dropdown-item" href="/logout">{{ request.user|title}}</a>
+                <a class="dropdown-item" href="{%url 'dashboard'%}">{{ request.user|title}}</a>
 <hr/>
                 <a class="dropdown-item text-danger" href="/logout">Logout</a>
             </div>

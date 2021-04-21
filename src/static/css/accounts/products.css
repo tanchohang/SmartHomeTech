@@ -74,16 +74,6 @@ int
     border: 3px solid red;
 }
 
-.container {
-    width: 33%;
-    height: auto;
-    min-width: 150px;
-    float: right;
-    margin-right: 2rem;
-    border-radius: 50%;
-    -webkit-shape-outside: circle();
-    shape-outside: circle();
-}
 .post-container {
     margin: 20px 20px 0 0;
     border: 5px solid transparent;

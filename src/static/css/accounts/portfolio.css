@@ -1,21 +1,57 @@
 ﻿section.portfolio_page container-fluid {
 }
+
 .container5 {
     position: absolute;
 }
+
 .text-block {
     position: absolute;
     background-color: black;
     color: white;
 }
-.G1 {
+
+.overlay {
     position: absolute;
-    width: 430px;
-    height: 430px;
-    left: 509px;
-    top: 3000px;
-    background: rgba(126, 202, 159, 0.29);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
 }
+
+.h1 {
+    position: absolute;
+    bottom: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    font-size: 100px;
+    font-family: Noto, serif;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    text-transform: uppercase;
+    transition-duration: 1s;
+    -webkit-background-clip: text;
+}
+
+.G1 {
+    width: 150px;
+    height: 195px;
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+}
+
+h1:hover {
+    letter-spacing: 10px;
+}
+
 .private {
     height: 200px;
     width: 115%;
@@ -26,6 +62,7 @@
     max-width: 1920px;
     min-width: 480px;
 }
+
 .l1 {
     position: absolute;
     width: 430px;
@@ -34,6 +71,7 @@
     top: 1916px;
     background: rgba(126, 202, 159, 0.29);
 }
+
 .l2 {
     position: absolute;
     width: 251px;
@@ -41,6 +79,7 @@
     left: 1084px;
     top: 2042px;
 }
+
 .l3 {
     position: absolute;
     width: 198px;
@@ -48,6 +87,7 @@
     left: 862px;
     top: 1991px;
 }
+
 .m3 {
     position: absolute;
     width: 198px;
@@ -55,33 +95,38 @@
     left: 862px;
     top: 1991px;
 }
+
 .m4 {
     position: absolute;
     width: 288px;
     height: 184px;
     left: 908px;
     top: 2240px;
-    float:right;
+    float: right;
 }
+
 .m5 {
     position: absolute;
     width: 251px;
     height: 382px;
     left: 1200px;
     top: 0px;
-    bottom:-50px;
+    bottom: -50px;
 }
+
 .rectangle32 {
     bottom: -50px;
 }
+
 .m6 {
     position: relative;
     width: 288px;
     height: 184px;
     left: 508px;
     top: 2240px;
-    float:left;
+    float: left;
 }
+
 .l6 {
     position: absolute;
     width: 340px;
@@ -89,12 +134,13 @@
     left: 720px;
     top: 2240px;
 }
+
 .l4 {
     position: absolute;
     width: 340px;
     height: 254px;
     left: 7720px;
     top: 500px;
-    padding-bottom:30px;
-    margin-left:40px;
+    padding-bottom: 30px;
+    margin-left: 40px;
 }

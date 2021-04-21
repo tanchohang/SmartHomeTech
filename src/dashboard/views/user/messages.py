@@ -23,7 +23,7 @@ def messages(request):
                 instance = form.save(commit=False)
                 instance.creator = request.user
                 instance.save()
-                return redirect('/dashboard/messages')
+                return redirect('message')
         else:
             form = MessageForm()
             messages = Message.objects.all()
@@ -41,7 +41,7 @@ def messages(request):
                 for file in files:
                     file_instance = MessageFiles(files=file, message=instance)
                     file_instance.save()
-                return redirect('/user/messages')
+                return redirect('message')
         else:
             form = MessageForm()
             fileform = MessageForm()

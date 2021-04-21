@@ -126,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
+FIXTURE_DIRS = ['/fixtures/initial.json']
 
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('static')
