@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 
 def unauthenticated_user(view_func):
@@ -22,7 +22,7 @@ def allowed_users(allowed_groups=[]):
             if group in allowed_groups:
                 return view_func(request, *args, **kwargs)
             else:
-                return HttpResponse('404')
+                return render(request, '../../404.html')
 
         return wrapper_func
     return decorator

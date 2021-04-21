@@ -10,8 +10,10 @@ from django.contrib.auth.decorators import login_required
 # Host Views
 
 
-def dashboard(request):
-    return render(request, 'dashboard/host/overview.html')
+# @login_required(login_url='login')
+# @allowed_users(allowed_groups=['host'])
+# def dashboard(request):
+#     return render(request, 'dashboard/host/overview.html')
 
 
 @login_required(login_url='login')

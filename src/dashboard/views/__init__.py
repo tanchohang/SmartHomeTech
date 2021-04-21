@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from .enduser import *
+from .user import *
 from .host import *
-from .contractor import *
 
 
 # Create your views here.
