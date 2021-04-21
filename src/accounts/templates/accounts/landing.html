@@ -1,116 +1,118 @@
 ﻿{% extends 'accounts/main.html' %}
 {% load static %}
 
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/landing.css'%}">
+{%endblock%}
 {%block content%}
 <!-- Feature -->
-<img src="{% static 'css/images/background.jpg' 'fill'  %}" alt="" style="width:1519px;height:720px;">
-<div class="HD">
-    <div class="container">
-        <h1 style="text-align:center"><span class="glyphicon glyphicon-equalizer"></span>Smart Automation</h1>
-        <h6 style="text-align:center">
-
-            SmartHome can transform homes with smart home automation; multi-room audio-visual entertainment; touch-of-a-button lighting control and heating control; a stunning home cinema installation; and the reassurance of a comprehensive security system. And we integrate these into a single, intelligent and user-friendly control system, to give complete control over a smart home's technology.
-            Our expert installations are industry-leading in their design, quality and reliability, while being intuitive and simple to use. And as we’re independent, we’re not tied on any technology providers.
-            We’ll work with you every step of the way to find the perfect solution for your luxury property, shaping our best-in-class smart home technology around your needs.
-            Please contact us to chat to one of our home automation consultants about your project or to arrange a demonstration, and see what we can do for you.
-        </br>
-        </br>
-        </h6>
+<section class="landing_page container-fluid">
+  <div="land">
+    <div class="landing">
+        <img src="{% static 'css/images/at1.jpg' 'fill'  %}" alt="" style="width:1540px;height:720px;">
     </div>
-</div>
+    <div class="HD">
+        <div class="container1">
+            <h1 style="text-align:center"><span class="glyphicon glyphicon-equalizer"></span>Smart Automation</h1>
+            <p style="text-align:center">
 
-<!-- About Start -->
-<div class="about">
-    <div class="container">
+                SmartHome can transform homes with smart home automation; multi-room audio-visual entertainment; touch-of-a-button lighting control and heating control; a stunning home cinema installation; and the reassurance of a comprehensive security system. And we integrate these into a single, intelligent and user-friendly control system, to give complete control over a smart home's technology.
+                Our expert installations are industry-leading in their design, quality and reliability, while being intuitive and simple to use. And as we’re independent, we’re not tied on any technology providers.
+                We’ll work with you every step of the way to find the perfect solution for your luxury property, shaping our best-in-class smart home technology around your needs.
+                Please contact us to chat to one of our home automation consultants about your project or to arrange a demonstration, and see what we can do for you.
+                <br>
+                </br>
+            </p>
+        </div>
+ <!----------Block-------------------------------------->
+        <div class="G1">
+            <div class=" row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-buffer">
+                        <div class="team-image" style="text-align:center">
+                            <h3>
+                                READY FOR THE FUTURE</h3>
+                               <p> By focusing on carefully integrating the latest technologies 
+                            and unparalleled design,we strive to create the best systems you will love to use.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="team-buffer2">
+                        <div class="team-image5">
+                            <img src="{% static 'css/images/Rectangle.jpg' %}"style="width:473px;height:450px;"/>
+                        </div>
+                        <br></br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--------Expert---------->
         <div class="row">
             <div class="col-lg-4 col-md-4">
-                <div class="about-img">
-                    <img src="{% static 'css/images/Rectangle.jpg' %}" ;>
+                <div class="about-img2">
+                    <img src="{% static 'css/images/Rectangle6.jpg' %}" alt="" style="width:500px;height:500px;">
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
-                <div class="about-text">
-                 <h6>
-                     <img src="{% static 'css/images/Rectangle.jpg' %}" ;>
-                 </h6>
+                <div id="about-text" style="text-align:right">
+                    <div class="int4">
+                        <h1> EXPERTS IN OUR FIELD</h1>
+                        <p>
+                            As home automation installation experts, we have the experience to
+                            deliver an  excellent home system that will meet your
+                            requirements and stand the test of time.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-<!-------------- NEW START---->
-    <div class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="about-img">
-                        <img src="{% static 'css/images/Rectangle6.jpg' %}" alt="" style="width:500px;height:500px;">
-                    </div>
+            <!-- Team Start -->
+            <div class="team">
+                <div class="section-header">
+                    <br></br>
+                    <h2 style="text-align:center">
+                        Your Smart Home is just few Steps Away
+                    </h2>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="about-text">
-                        <h6 style="text-align:center">
-                            EXPERTS IN OUR FIELD
-
-                            As home automation installation experts, we have the experience to 
-                            deliver an excellent home system
-                            that will meet your requirements and stand the test of time.hello
-                        </h6>
-                        
-                    </div>
-                </div>
-                <!-- Team Start -->
-                <div class="team">
-                    <div class="container">
-                        <div class="section-header">
-                            </br>
-                            </br>
-                            </br>
-                            <h2 style="text-align:center">
-                                your Smart Home is just few Steps Away
-                                </br>
-                                </br>
-                            </h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="team-item item-right">
+                            <div class="team-img1">
+                                <img src="{% static 'css/images/white1.jpg' %}" style="width:350px;height:300px;">
+                            </div>
+                            <div class="team-text">
+                                <p>
+                                    Visit our online estimate page and build your</br>
+                                    ideal smart home package and get your free estimate
+                                </p>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="team-item item-right">
-                                    <div class="team-img">
-                                        <img src="{% static 'css/images/white1.jpg' %}" style="width:350px;height:300px;">
-                                    </div>
-                                    <div class="team-text">
-                                        <h6>
-                                            Visit our online estimate page and build your</br>
-                                            ideal smart home package and get your free estimate
-                                        </h6>
-
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="team-item item-right">
+                            <div class="team-img2">
+                                <img src="{% static 'css/images/white2.jpg' %}" style="width:350px;height:300px;">
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="team-item">
-                                    <div class="team-img">
-                                        <img src="{% static 'css/images/white3.jpg' %}" style="width:350px;height:300px;">
-                                    </div>
-                                    <div class="team-text">
-                                        <h6>
-                                            Our smart home expert will call you to discuss the exact product that will work with your home <br />
-                                            and your customised way of livingLightning
-                                        </h6>
-                                    </div>
-                                </div>
+                            <div class="team-text2">
+                                <p>
+                                    Our smart home expert will call you to discuss the </br>
+                                    exact product that will work with your home and your customised way of living
+                                </p>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="team-item">
-                                    <div class="team-img">
-                                        <img src="{% static 'css/images/white2.jpg' %}" style="width:350px;height:300px;">
-                                    </div>
-                                    <div class="team-text">
-                                        <h6>
-                                            A SmartHome installer will visit your home prepared with all your required products, and </br>
-                                            provide a full install, integration and training
-                                        </h6>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="team-item item-right">
+                            <div class="team-img3">
+                                <img src="{% static 'css/images/white3.jpg' %}" style="width:350px;height:300px;">
+                            </div>
+                            <div class="team-text3">
+                                <p>
+                                    A SmartHome installer will visit your home prepared
+                                    with all your required products, and provide a full install,
+                                    integration and training
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -118,6 +120,6 @@
             </div>
         </div>
     </div>
-</div>
- <!-- Team End -->
-  {%endblock%}
+ </div>
+</section>
+{%endblock%}

@@ -1,0 +1,154 @@
+section.products_page container-fluid {
+}
+.product{
+    background: #174B2E;
+    text-decoration-color: white;
+    height: 800px;
+    margin: auto;
+    text-align:match-parent;
+}
+.h2 {
+    position: absolute;
+    width: 566px;
+    height: 543px;
+    left: 689px;
+    top: 209px;
+    background: rgba(126, 202, 159, 0.09);
+    border-radius: 20px;
+}
+.h3 {
+    position: absolute;
+    width: 560.12px;
+    height: 300.42px;
+    left: 1000px;
+    top: 250px;
+    border-radius: 20px;
+}
+.h4 {
+    position: absolute;
+    width: 183.79px;
+    height: 188.03px;
+    left: 650.44px;
+    top: 500px;
+    background: url(gira3.jpg);
+    border-radius: 20px;
+}
+.top {
+    font: Work Sans;
+    left: 300px;
+    top: 280px;
+    position: absolute;
+    margin-top:50px;
+    text-color:white;
+}
+<!----css for source Services--------------------->
+int
+ {
+    width: 599px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 100px;
+    background-color: darkseagreen;
+    vertical-align: middle;
+}
+
+.int {
+    text-align: right;
+    float:right;
+}
+.circle . circle2 {
+    width: 300px;
+    height: 300px;
+    float: right;
+    border-radius: 50%;
+    text-align: right;
+    marginradius: 20px;
+}
+.text box {
+    border-style: solid;
+    border-color: #287EC7;
+    padding: 1em;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid red;
+}
+
+.container {
+    width: 33%;
+    height: auto;
+    min-width: 150px;
+    float: right;
+    margin-right: 2rem;
+    border-radius: 50%;
+    -webkit-shape-outside: circle();
+    shape-outside: circle();
+}
+.post-container {
+    margin: 20px 20px 0 0;
+    border: 5px solid transparent;
+    overflow: auto;
+    Font: Work Sans;
+}
+
+.post-thumb {
+    float: right
+}
+
+    .post-thumb img {
+        display: block
+    }
+
+.post-content {
+    margin-right: 210px
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+
+.post-container1 {
+    margin: 20px 20px 0 0;
+    border: 5px solid transparent;
+    overflow: auto
+}
+
+.post-thumb1 {
+    float:left;
+}
+
+    .post-thumb1 img {
+        display: block
+    }
+
+.post-content1 {
+    margin-right: 210px
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+
+.post {
+    position: absolute;
+    width: 1590px;
+    height: 642px;
+    left: 30px;
+    right:40px;
+    top: 2000px;
+    background-color: 7ECA9F;
+    Font: Work Sans;
+    background: linear-gradient(182.04deg, #7ECA9F -31.13%, rgba(251, 251, 251, 0) 54.56%);
+}
+.circle {
+    display: inline-block;
+    border: 2px solid;
+    position: relative;
+    border-radius: 50%;
+    width: 70%;
+    height: 70%;
+    padding:90px;
+    Font:Work Sans;
+}

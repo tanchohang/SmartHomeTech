@@ -1,0 +1,100 @@
+﻿section.portfolio_page container-fluid {
+}
+.container5 {
+    position: absolute;
+}
+.text-block {
+    position: absolute;
+    background-color: black;
+    color: white;
+}
+.G1 {
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    left: 509px;
+    top: 3000px;
+    background: rgba(126, 202, 159, 0.29);
+}
+.private {
+    height: 200px;
+    width: 115%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1920px;
+    min-width: 480px;
+}
+.l1 {
+    position: absolute;
+    width: 430px;
+    height: 299px;
+    left: 409px;
+    top: 1916px;
+    background: rgba(126, 202, 159, 0.29);
+}
+.l2 {
+    position: absolute;
+    width: 251px;
+    height: 382px;
+    left: 1084px;
+    top: 2042px;
+}
+.l3 {
+    position: absolute;
+    width: 198px;
+    height: 224px;
+    left: 862px;
+    top: 1991px;
+}
+.m3 {
+    position: absolute;
+    width: 198px;
+    height: 224px;
+    left: 862px;
+    top: 1991px;
+}
+.m4 {
+    position: absolute;
+    width: 288px;
+    height: 184px;
+    left: 908px;
+    top: 2240px;
+    float:right;
+}
+.m5 {
+    position: absolute;
+    width: 251px;
+    height: 382px;
+    left: 1200px;
+    top: 0px;
+    bottom:-50px;
+}
+.rectangle32 {
+    bottom: -50px;
+}
+.m6 {
+    position: relative;
+    width: 288px;
+    height: 184px;
+    left: 508px;
+    top: 2240px;
+    float:left;
+}
+.l6 {
+    position: absolute;
+    width: 340px;
+    height: 254px;
+    left: 720px;
+    top: 2240px;
+}
+.l4 {
+    position: absolute;
+    width: 340px;
+    height: 254px;
+    left: 7720px;
+    top: 500px;
+    padding-bottom:30px;
+    margin-left:40px;
+}

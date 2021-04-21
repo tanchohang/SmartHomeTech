@@ -1,51 +1,24 @@
 ﻿
-<div class="footer-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 footer-info-item">
-                <h3>Information</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Orders &amp; Returns</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 footer-info-item">
-                <h3>My Account</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">View Cart</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Track My Order</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4 footer-info-item">
-                <h3><span class="glyphicon glyphicon-list-alt"></span> Newsletter</h3>
-                <p>Sign up for exclusive offers.</p>
-                <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Enter your email address">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            Subscribe!
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+{%load static%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/footer.css'%}">
+{%endblock%}
+
+{%block content%}
+
+<div class="footer-basic">
+    <footer>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Smart Home © 2021</p>
+    </footer>
 </div>
 
-<!-- Copyright etc -->
-<div class="small-print">
-    <div class="container">
-        <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-        <p>Copyright &copy; Example.com 2015 </p>
-    </div>
-</div>
-
-	</footer>
-
-
+{%endblock%}
