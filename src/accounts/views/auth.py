@@ -8,8 +8,10 @@ from ..forms import UserRegistrationForm, EndUserRegistrationForm, ContractorReg
 
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
+from dashboard.decorators import unauthenticated_user
 
 
+@unauthenticated_user
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -17,13 +19,13 @@ def loginPage(request):
 
         user = authenticate(username=username,
                             password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/dashboard')
+        login(request, user)
+        return redirect('/login')
     else:
         return render(request, 'accounts/login.html')
 
 
+@unauthenticated_user
 def registerPage(request):
     if request.method == 'POST':
         userForm = UserRegistrationForm(request.POST)
@@ -54,7 +56,7 @@ def registerPage(request):
 
             # login user
             login(request, authUser)
-            return HttpResponseRedirect('/user/')
+            return HttpResponseRedirect('/login')
 
     else:
         userForm = UserRegistrationForm()
@@ -92,7 +94,7 @@ def contractorRegisterPage(request):
 
             # login user
             login(request, authUser)
-            return HttpResponseRedirect('/contractor/')
+            return HttpResponseRedirect('/login')
 
     else:
         userForm = UserRegistrationForm()

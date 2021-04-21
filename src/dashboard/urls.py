@@ -2,38 +2,24 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('user/', views.enduser.dashboard),
-    path('user/quotes/', views.enduser.quotes),
-    path('user/profile/', views.enduser.profile),
-    path('user/messages/', views.enduser.messages),
-    path('user/messages/<id>/', views.enduser.message_detail),
-    path('user/messages/<id>/delete', views.enduser.message_delete),
-    path('user/appointment/', views.enduser.appointment),
+    path('dashboard/', views.enduser.dashboard, name='dashboard'),
+    path('quotes/', views.enduser.quotes, name='quotes'),
+    path('profile/<str:username>', views.enduser.profile, name='profile'),
+    path('messages/', views.enduser.messages, name='message'),
+    path('messages/<id>/', views.enduser.message_detail, name='message-detail'),
+    path('messages/<id>/delete', views.enduser.message_delete),
+    path('appointment/', views.enduser.appointment, name='appointment'),
 
-
-
-
-    # Contractor Url
-
-    path('contractor/', views.contractor.dashboard),
-    path('contractor/quotes/', views.contractor.quotes),
-    path('contractor/profile/', views.contractor.profile),
-
-    path('contractor/messages/', views.contractor.messages),
-    path('contractor/messages/<id>/',
-         views.contractor.message_detail),
 
     # Host URL
 
-    path('host/', views.host.dashboard),
-    path('host/users/', views.host.users),
-
-    path('host/quotes/', views.host.quotes),
-    path('host/profile/', views.host.profile),
-
-    path('host/messages/', views.host.messages),
-    path('host/messages/<id>/',
-         views.host.message_detail),
+    # path('host/', views.host.dashboard, name='host'),
+    path('users/', views.host.users, name='users'),
+    # path('host/quotes/', views.host.quotes),
+    # path('host/profile/', views.host.profile),
+    # path('host/messages/', views.host.messages),
+    # path('host/messages/<id>/',
+    #      views.host.message_detail),
 
 
 

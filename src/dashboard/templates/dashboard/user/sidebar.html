@@ -14,33 +14,37 @@
     <div class="">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="/user/">
+            <a class="nav-link" href="{%url 'dashboard'  %}">
               <i class="fas fa-tachometer-alt"></i>
               <span class="">Overview</span>
             </a>
           </li>
+          {%if request.user.groups.first.name == 'host'%}
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-lightbulb"></i>
-              <span class="">Orders</span>
+            <a class="nav-link" href="{%url 'users'%}">
+              <i class="fas fa-users"></i>
+              <span class="">Users</span>
             </a>
-          </li><li class="nav-item">
+          </li>
+          {%endif%}
+
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fas fa-project-diagram"></i>
               <span class="">Projects</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="/user/quotes">
+            <a class="nav-link" href="{%url 'quotes'  %}">
               <i class="fas fa-tasks"></i>
               <span class="">Quotes</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="/user/profile">
+            <a class="nav-link" href="{%url 'profile' request.user.username %}">
               <i class="fas fa-user"></i>
               <span class="">Profile</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="/user/messages">
+            <a class="nav-link" href="{%url 'message'  %}">
               <i class="fas fa-envelope"></i>
               <span class="">Messages</span>
             </a>

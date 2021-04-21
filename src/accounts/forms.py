@@ -2,7 +2,7 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User
-from .models import EndUser, Contractor, AddressInfo
+from .models import UserDetail, AddressInfo
 
 
 class LoginForm(AuthenticationForm):
@@ -20,13 +20,19 @@ class UserRegistrationForm(UserCreationForm):
 
 class ContractorRegistrationForm(forms.ModelForm):
     class Meta:
-        model = Contractor
+        model = UserDetail
         fields = ['company_name']
+
+
+class HostRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = UserDetail
+        fields = ['department', 'position']
 
 
 class EndUserRegistrationForm(forms.ModelForm):
     class Meta:
-        model = EndUser
+        model = UserDetail
         fields = []
 
 

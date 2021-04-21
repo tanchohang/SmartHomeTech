@@ -1,0 +1,113 @@
+{% extends 'accounts/main.html' %}
+{%load static%}
+
+{% block title %}Register{% endblock %}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/register.css'%}">
+
+{%endblock%}
+
+{%block content%}
+
+{% load crispy_forms_tags %}
+<!-- {{ form.non_field_errors }} -->
+<section class="container-fluid">
+        <header class="row">
+            
+                <img class="">
+                <h3>Registration for Hosts</h3>
+            
+        </header>
+
+        <section class="form row">
+            <form method="POST" action="">
+                {%csrf_token%}
+
+
+                <div class="">
+                    <div class="form-row">
+                        <div class="col">
+                            {{userForm.first_name|as_crispy_field}}
+                        </div>
+                        <div class="col">
+                            {{userForm.last_name|as_crispy_field}}
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{contractorForm.company_name|as_crispy_field}}
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col">
+                            {{userForm.username|as_crispy_field}}
+                        </div>
+                        <div class="col">
+                            {{userForm.email|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{userForm.password1|as_crispy_field}}
+                        </div>
+                        <div class="col">
+                            {{userForm.password2|as_crispy_field}}
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{addressForm.phone_no|as_crispy_field}}
+                        </div>
+                        <div class="col">
+                            {{addressForm.mobile_no|as_crispy_field}}
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{addressForm.address_1|as_crispy_field}}
+
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{addressForm.address_2|as_crispy_field}}
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{addressForm.city|as_crispy_field}}
+
+                        </div>
+                        <div class="col">
+                            {{addressForm.country|as_crispy_field}}
+
+                        </div>
+                        <div class="col">
+                            {{addressForm.postcode|as_crispy_field}}
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-links">
+                    <input type="submit" class="btn btn-primary" value="Register" />
+                </div>
+
+            </form>
+        </section>
+        
+
+    
+
+</section>
+
+
+{%endblock%}

@@ -1,31 +1,36 @@
 from django.shortcuts import render, redirect
 
 from dashboard.models import Message, Reply, Quote
-from accounts.models import EndUser, Contractor
+from django.contrib.auth.models import User
 from dashboard.forms import MessageForm
 
+from dashboard.decorators import allowed_users
+from django.contrib.auth.decorators import login_required
 
 # Host Views
+
 
 def dashboard(request):
     return render(request, 'dashboard/host/overview.html')
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
 def users(request):
-    endusers = EndUser.objects.all()
-    contractors = Contractor.objects.all()
+    endusers = User.objects.filter(groups__name='end-user')
+    contractors = User.objects.filter(groups__name='contractor')
     return render(request, 'dashboard/host/users.html', {'endusers': endusers, 'contractors': contractors})
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
 def quotes(request):
     quotes = Quote.objects.all()
     return render(request, 'dashboard/host/quotes.html', {'quotes': quotes})
 
 
-def profile(request):
-    return render(request, 'dashboard/host/profile.html')
-
-
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
 def messages(request):
 
     if request.method == 'POST':
@@ -62,6 +67,8 @@ def message_detail(request, id):
         return render(request, 'dashboard/host/message-detail.html', {'message': message, 'replies': replies, 'user': request.user})
 
 
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
 def message_delete(request, id):
     message = Message.objects.filter(id=id).delete()
     return redirect('/dashboard/messages')

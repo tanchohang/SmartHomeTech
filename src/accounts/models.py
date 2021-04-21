@@ -16,15 +16,11 @@ class AddressInfo(models.Model):
     postcode = models.CharField(max_length=30)
 
 
-class EndUser(models.Model):
+class UserDetail(models.Model):
+    company_name = models.CharField(max_length=100, blank=True)
+    department = models.CharField(max_length=100, blank=True)
+    position = models.CharField(max_length=100, blank=True)
 
-    address = models.OneToOneField(AddressInfo, on_delete=models.CASCADE)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    uuid = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-
-
-class Contractor(models.Model):
-    company_name = models.CharField(max_length=100)
     address = models.OneToOneField(AddressInfo, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)

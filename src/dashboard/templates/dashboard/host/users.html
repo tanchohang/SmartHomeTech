@@ -1,4 +1,4 @@
-{% extends './user.html' %}
+{% extends '../user/user.html' %}
 {%load static%}
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/users.css'%}">
@@ -35,7 +35,7 @@
         <tr>
           <td>
             <span>
-              {{enduser.user}}
+              {{enduser.username}}
             </span>
           </td>
 
@@ -58,7 +58,7 @@
                 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {%for contractor in contractors%}
-                    <li class="dropdown-item" href="#">{{contractor.user}}</a>
+                    <li class="dropdown-item" href="#">{{contractor.username}}</a>
                   {%endfor%}
                   
                 </ul>
@@ -88,7 +88,7 @@
         <tr>
           <td>
             <span>
-              {{contractor.user}}
+              {{contractor.username}}
             </span>
           </td>
 
