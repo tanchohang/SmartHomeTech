@@ -1,0 +1,24 @@
+.logo{
+
+}
+nav{
+    background-color: white;
+    height: 80px;
+    width: 100vw;
+    
+}
+
+
+
+nav ul{
+    margin-left: 10%;
+}
+nav  a{
+    text-decoration: none;
+    color: #828282;
+}
+nav ul li a:hover, .active{
+    color: #5cb85c ;
+}
+.account{
+}
