@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    border: 5px dashed red;
-    overflow-x: hidden !
+    /* border: 5px dashed red; */
+    /* overflow-x: hidden ! */
 }
 html {
     margin: 0;
@@ -13,6 +13,8 @@ html {
 
 .content{
     margin-top: 80px;
-    width: 100vw;
+    width: 100px;
+    max-width: 100vw;
+
 
 }

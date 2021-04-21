@@ -1,28 +1,98 @@
-section.landing_page container-fluid {
-    overflow-x: hidden;
-    white-space:normal;
+section.landing_page {
+    /* overflow-x: hidden; */
+    /* white-space:normal; */
 }
 .background {
-    position: fixed;
-    max-width: NNNpx;
-    overflow-x: hidden;
-    white-space:normal;
+    /* position: fixed; */
+    /* max-width: NNNpx; */
+    /* overflow-x: hidden; */
+    /* white-space:normal; */
 }
 .land {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    max-width: 1920px;
-    min-width: 480px;
-    overflow-x: hidden;
-    border: 5px dashed red;
-    height: 100%;
+    /* width: 100%; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
+    /* overflow: hidden; */
+    /* max-width: 1920px; */
+    /* min-width: 480px; */
+    /* overflow-x: hidden; */
+    /* border: 5px dashed red; */
+    /* height: 100%; */
 }
 .landing{
-    background-size:cover;
+    background-image: url('../images/at1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color: white;
 }
+.landing .hero-text{
+    font-size: 38px;
+    font-weight: bolder;
+    width: 40px;
+
+}
+.quote{
+    width: 100vw;
+}
+
+.quote p,.quote h1{
+    width: 50%;
+    margin: 0 auto ;
+    text-align: center;
+    font-style: italic;
+}
+
+.team .row{
+    /* display: flex;
+    justify-content: center; */
+    width: 100vw;
+}
+
+.team-image1 {
+    /* border: 2px solid #000000; */
+    /* position: absolute; */
+    /* left: 50px; */
+    /* right: 20.7%; */
+    /* top: 11.53%; */
+}
+.team {
+    background: #f1f1f1;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    color: gray;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    width:100vw;
+}
+.team-img {
+    padding: 50px;
+    margin: 2%;
+    background: white;
+    width: 40%;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius: 2px;
+    transition: .2s all;
+}
+
+.row:hover .team-img {
+    filter: blur(3px);
+    opacity: .5;
+    transform: scale(.98);
+    box-shadow: none;
+}
+
+ .row:hover .team-img:hover {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+        box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
+  }
+
+/* 
 .team-image {
     border: 2px solid #000000;
     width:500px;
@@ -189,4 +259,4 @@ section.landing_page container-fluid {
         filter: blur(0px);
         opacity: 1;
         box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125);
-    }
+    } */
