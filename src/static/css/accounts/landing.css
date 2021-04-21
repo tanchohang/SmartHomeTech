@@ -107,8 +107,7 @@ section.landing_page container-fluid {
     color: gray;
     text-align: center;
     -webkit-font-smoothing: antialiased;
-    width:auto;
-    height:auto;
+    width:100vw;
 }
 .row {
     display: flex;
