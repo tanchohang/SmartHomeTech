@@ -20,8 +20,8 @@
 }
 .button1 {
     background-color: white;
-    color: black;
-    border: 0px solid #4CAF50;
+    color: 4CAF50;
+    border: 2px solid #4CAF50;
 }
 
 .topnav {
