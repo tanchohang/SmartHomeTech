@@ -6,19 +6,15 @@ from .auth import *
 
 
 def home(request):
-    return render(request, 'accounts/landing.html', {'include': True})
-
-
-def products(request):
-    return render(request, 'accounts/products.html')
+    return render(request, 'accounts/landing.html', {'include': True, 'navlink': 'home'})
 
 
 def services(request):
-    return render(request, 'accounts/services.html', {'include': True})
+    return render(request, 'accounts/services.html', {'include': True, 'navlink': 'services'})
 
 
 def portfolio(request):
-    return render(request, 'accounts/portfolio.html', {'include': True})
+    return render(request, 'accounts/portfolio.html', {'include': True, 'navlink': 'portfolio'})
 
 
 def contact(request):
