@@ -10,13 +10,14 @@
 }
 .G1 {
     position: absolute;
-    width: 430px;
+    width: 830px;
     height: 430px;
-    left: 509px;
+    left: 909px;
+    right:700px;
     top: 3000px;
     background: rgba(126, 202, 159, 0.29);
 }
-.private {
+.mid{
     height: 200px;
     width: 115%;
     margin: 0;
@@ -52,16 +53,17 @@
     position: absolute;
     width: 198px;
     height: 224px;
-    left: 862px;
+    left: -862px;
     top: 1991px;
+    right
 }
-.m4 {
+.h4 {
     position: absolute;
-    width: 288px;
-    height: 184px;
-    left: 908px;
-    top: 2240px;
-    float:right;
+    width: 251px;
+    height: 224px;
+    left: 533px;
+    top: 116px;
+
 }
 .m5 {
     position: absolute;
