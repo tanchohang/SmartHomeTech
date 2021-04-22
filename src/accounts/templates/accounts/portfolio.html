@@ -1,53 +1,62 @@
 {% extends 'accounts/layout.html' %}
 
 {% load static %}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/accounts/portfolio.css'%}">
+
+{%endblock%}
 {%block content%}
-<section class="products_page container-fluid">
-    <div class="col-md-6">
-        <img src="{% static 'css/images/image5.jpg' %}" alt="" style="width:1460px;height:800px;">
-        <p class="label">Home Technology</p>
+<section class="portfolio_page">
+    <div class="hero">
+        <div>
+           <span class="d-block heading">
+            Home Technology Portfolio
+            </span>
+            <span class="text">
+                A living testimony to beautifully carfted, technology enhanced house
+            </span>
+            <button class="btn btn-light d-block">Look Inside</button>
+        </div> 
+        
     </div>
-    <div class="col-sm-6">
-        <div class="text-block">
-            <h4 style="text-align:Left">
-            </h4>
-            <p></p>
-        </div>
-    </div>
-    </div>
-    <div class="G1 mx-auto">
-        <div class=" row">
-            <div class="col-lg-4 col-md-6">
-                <img src="{% static 'css/images/Group1.jpg' %}" alt="" style="width:500px;height:346px;">
-                <p></p>
+
+    
+    
+    <div class="G1">
+        <div class="bespoke">
+            <div class="text-block text-center">
+                <h4 class="title font-weight-normal">Bespoke Smart Home</h4>
+                <span class="d-block ">
+                    Lorem ipsum fusce ad dui sit convallis elit luctus, inceptos nunc commodo porta cras netus aptent, consequat mattis placerat ultrices quisque semper curabitur.
+
+
+                </span>
+                <a href="" class="more btn btn-outline-info font-weight-bold">learn more</a>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-item item-right">
-                    <img src="{% static 'css/images/Rectangle5.jpg' %}" alt="" style="width:500px;height:346px;">
-                </div>
+        </div>
+        <div class="lighting">
+            <div class="text-block text-center">
+                <h4 class="title font-weight-normal">Smart Lighting</h4>
+                <span class="d-block ">
+                    Lorem ipsum fusce ad dui sit convallis elit luctus, inceptos nunc commodo porta cras netus aptent, consequat mattis placerat ultrices quisque semper curabitur.
+
+
+                </span>
+                <a href="" class="more btn btn-outline-info font-weight-bold">learn more</a>
             </div>
         </div>
     </div>
     <div class="private">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="know">
-                    <img src="{% static 'css/images/Rectangle26.jpg' %}" alt="" style="width:1500px;height:600px;">
+                <div class="entertainment">
+                    <div class="text-block">
+                        <h3>Private Entertainment Complex</h3>
+                        <button class="btn btn-light">Look Inside</button>
+                    </div>
                 </div>
-            </div>
-            <br />
-            <div class="col-md-6">
-                <div class="text-block">
-                    <h4 style="text-align:left">
-                        HOME TECHNOLOGY PORTFOLIO
-                    </h4>
-                    <p style="text-align:right">A living testimony to beautifully crafted, technologically enhanced households</pstyle="text-align:right">
-                </div>
-            </div>
-        </div>
+                
     </div>
-    </br>
-    <div class="mid">
+    
+    <!-- <div class="mid">
         <div class="row">
             <div class="h4">
                 <img src="{% static 'css/images/Rectangle1.jpg' %}" alt="" style="width:200px;">
@@ -71,6 +80,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 {%endblock%}

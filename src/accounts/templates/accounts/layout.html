@@ -43,7 +43,7 @@
     </header>
     {% endif %}
 
-    <div class="content p-0 ">
+    <div class="content">
         {% block content %}
 
         {% endblock %}
@@ -51,10 +51,9 @@
     
 
     {% if include%}
-
-    <footer>
+    <div class="footer">
         {%include 'accounts/footer.html'%}
-    </footer>
+    </div>
     {% endif %}
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
