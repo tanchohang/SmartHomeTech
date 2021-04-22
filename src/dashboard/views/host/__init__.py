@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 
 from dashboard.models import Message, Reply, Quote
+from accounts.models import UserDetail
 from django.contrib.auth.models import User
+
 from dashboard.forms import MessageForm
 
 from dashboard.decorators import allowed_users
@@ -74,3 +76,15 @@ def message_detail(request, id):
 def message_delete(request, id):
     message = Message.objects.filter(id=id).delete()
     return redirect('/dashboard/messages')
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
+def assign_contractor(request, user_id, contractor_id):
+    user = UserDetail.objects.get(user_id=user_id)
+    contractor = UserDetail.objects.get(user_id=contractor_id)
+    user.contractor = (contractor)
+    user.save()
+
+    # user.save()
+    return redirect('users')

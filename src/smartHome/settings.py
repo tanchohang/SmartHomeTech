@@ -126,7 +126,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
-FIXTURE_DIRS = ['/fixtures/initial.json']
+FIXTURE_DIRS = ['accounts/fixtures/']
+# AUTH_USER_MODEL = "accounts.User"
 
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('static')

@@ -21,13 +21,13 @@
     New Message
   </button>
 </div>
-<ul>
+<ul class="my-3">
     {%for message in messages%}
-    <li>
+    <li class="my-2">
         <a class="card  p-3 bg-white rounded" href="{{message.id}}">
                 <div class="info">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{message.creator}}</span>
+                    <span class="user-name font-weight-bold">{{message.creator.user}}</span>
                 
                     <span class="timestamp text-secondary float-right">{{message.created}}</span>
     

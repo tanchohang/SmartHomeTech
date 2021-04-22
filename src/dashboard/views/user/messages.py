@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from dashboard.models import Message, Reply, Appointment
-# from django.contrib.auth.models import User
-from dashboard.forms import MessageForm, AppointmentForm, FileForm
+
+from dashboard.forms import MessageForm, AppointmentForm, FileForm, ReplyForm
 from dashboard.models import MessageFiles
+from accounts.models import UserDetail
 from dashboard.decorators import allowed_users
 from django.contrib.auth.decorators import login_required
 
@@ -19,9 +20,9 @@ def messages(request):
         if request.method == 'POST':
             form = MessageForm(request.POST, request.FILES)
 
-            if form.is_valid:
+            if form.is_valid():
                 instance = form.save(commit=False)
-                instance.creator = request.user
+                instance.creator = request.user.userdetail
                 instance.save()
                 return redirect('message')
         else:
@@ -36,7 +37,7 @@ def messages(request):
             files = request.FILES.getlist('files')
             if form.is_valid() and fileform.is_valid():
                 instance = form.save(commit=False)
-                instance.creator = request.user
+                instance.creator = request.user.userdetail
                 instance.save()
                 for file in files:
                     file_instance = MessageFiles(files=file, message=instance)
@@ -45,7 +46,8 @@ def messages(request):
         else:
             form = MessageForm()
             fileform = MessageForm()
-            messages = Message.objects.filter(creator=request.user.id)
+            messages = Message.objects.filter(
+                creator=request.user.userdetail)
 
             return render(request, 'dashboard/user/messages.html', {'messages': messages, 'form': form, 'fileform': FileForm})
 
@@ -57,34 +59,38 @@ def message_detail(request, id):
     if request.user.groups.first().name == 'host':
 
         if request.method == 'POST':
-            print(request.POST)
+
             reply = Reply()
             reply.body = request.POST.get('body')
             reply.message = Message.objects.get(id=id)
-            reply.author = request.user
+            reply.author = request.user.userdetail
             reply.save()
 
             replies = Reply.objects.filter(message=id)
-            return redirect('/host/messages/'+id)
+            return redirect('message-detail', id)
         else:
 
             message = Message.objects.get(id=id)
             replies = Reply.objects.filter(message=id)
 
-            return render(request, 'dashboard/host/message-detail.html', {'message': message, 'replies': replies, 'user': request.user})
+            return render(request, 'dashboard/host/message-detail.html', {'message': message, 'replies': replies, 'user': request.user.userdetail})
 
     else:
 
         if request.method == 'POST':
-            print(request.POST)
-            reply = Reply()
-            reply.body = request.POST.get('body')
-            reply.message = Message.objects.get(id=id)
-            reply.author = request.user
-            reply.save()
+            replyForm = ReplyForm(request.POST)
+            fileform = FileForm(request.POST, request.FILES)
 
-            replies = Reply.objects.filter(message=id)
-            return redirect('/user/messages/'+id)
+            if replyForm.is_valid():
+                instance = replyForm.save(commit=False)
+
+                instance.message = Message.objects.get(id=id)
+                instance.author = request.user.userdetail
+                instance.save()
+
+                return redirect('message-detail', id)
+            else:
+                print('error')
         else:
             appointmentForm = AppointmentForm()
             message = Message.objects.get(id=id)
@@ -94,7 +100,9 @@ def message_detail(request, id):
 
             replies = Reply.objects.filter(message=id)
 
-            return render(request, 'dashboard/user/message-detail.html', {'message': message, 'replies': replies, 'user': request.user, 'quote': quote})
+            replyForm = ReplyForm()
+            fileform = FileForm()
+            return render(request, 'dashboard/user/message-detail.html', {'message': message, 'replies': replies, 'user': request.user.userdetail, 'quote': quote, 'replyForm': replyForm, 'fileform': FileForm})
 
 
 @login_required(login_url='login')

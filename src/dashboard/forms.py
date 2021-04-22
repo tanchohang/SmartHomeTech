@@ -1,5 +1,5 @@
 from django import forms
-from .models import Message, MessageFiles
+from .models import Message, MessageFiles, Reply, Project
 from tempus_dominus.widgets import DatePicker, TimePicker, DateTimePicker
 
 
@@ -13,7 +13,27 @@ class MessageForm(forms.ModelForm):
 
     class Meta:
         model = Message
-        fields = ("subject", "body")
+        fields = ["subject", "body"]
+
+
+class ProjectForm(forms.ModelForm):
+
+    class Meta:
+        model = Project
+        fields = ["name", "description"]
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+        }
+
+
+class ReplyForm(forms.ModelForm):
+
+    class Meta:
+        model = Reply
+        fields = ["body"]
+        widgets = {
+            'body': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+        }
 
 
 class FileForm(forms.ModelForm):

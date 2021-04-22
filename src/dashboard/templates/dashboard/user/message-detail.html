@@ -1,6 +1,7 @@
 {% extends '../layout.html' %}
 
 {%load static%}
+{% load crispy_forms_tags %}
 
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/message.css'%}">
@@ -10,7 +11,7 @@
 
 {%block content%}
 <div class="message-detail">
-    <h5 class="subject">{{message.subject}}</h5>
+    <h5 class="subject">{{message.subject}} </h5>
     <a href="/dashboard/messages/{{message.id}}/delete" class="text-danger"><i class="fas fa-trash"></i></a>
     <ul>
 
@@ -18,7 +19,7 @@
         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <i class="fas fa-user-circle"></i>
-                <span class="user-name font-weight-bold">{{message.creator}}</span>
+                <span class="user-name font-weight-bold">{{message.creator.user}}</span>
                 <span class="timestamp text-secondary float-right">{{message.created}}</span>
             </div>
             <div class="message_preview ml-4">
@@ -31,9 +32,7 @@
                         {%else%}
                         {{message.body}}     
 
-                        {%endif%}
-
-                </table>
+                        {%endif%}                
             </div>
         </li>
 
@@ -44,7 +43,7 @@
             <li class="card p-3 mb-5 bg-white rounded">
                 <div class="info">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{reply.author}}</span>
+                    <span class="user-name font-weight-bold">{{reply.author.user}}</span>
                     <span class="timestamp text-secondary float-right">{{reply.created}}</span>
                 </div>
                 <div class="message_preview ml-4">
@@ -56,7 +55,7 @@
             <li class="card p-3 mb-5 bg-white rounded">
                 <div class="info">
                     <div class="float-right">
-                        <span class="user-name font-weight-bold">{{reply.author}}</span>
+                        <span class="user-name font-weight-bold">{{reply.author.user}}</span>
                         <i class="fas fa-user-circle"></i>
 
                     </div>
@@ -113,21 +112,23 @@
         
         
     </ul>
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         {%csrf_token%}
         <li class="card p-3 mb-5 bg-white rounded">
-            <div class="info">
+            <div class="info text-secondary">
                 <div class="">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{message.user}}</span>
+                    <span class="user-name font-weight-bold">{{message.creator.user}}</span>
                     <div><span class="user-name font-weight-normal ml-3">{{message.subject}}</span></div>
                 </div>
             </div>
-            <div class="form-group mt-3">
-                <textarea class="form-control reply-input" name="body" rows="5"></textarea>
+            <div class="form-group mt-3 textarea">
+                {{replyForm.body|as_crispy_field}}
                 <div class=" action-buttons">
                     <input type="submit" class="btn btn-primary mt-3" value="Send"/>
-                    <a class="btn btn-light"><i class="fas fa-paperclip"></i></a>
+                    {{fileform}}
+                    <!-- <input type="file" name="files" class="btn mt-2 " multiple/> -->
+                    <!-- <a class="btn btn-light"><i class="fas fa-paperclip"></i></a> -->
                 </div>
                
               </div>

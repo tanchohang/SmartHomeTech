@@ -1,0 +1,49 @@
+{% extends '../layout.html' %}
+
+{%load static%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/user_requests.css'%}">
+
+{%endblock%}
+{%block content%}
+<h3>Requests</h3>
+<table class="table users">
+    <thead>
+        <tr>
+            <th>user</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {%for user in users%}
+        <tr>
+            <td>
+                <a href="{%url 'profile' user.user.username%}">
+                    {{user.user.username}}
+                </a>
+
+            </td>
+
+            <td>
+                {%if user.contractor_confirmed%}
+                <span>
+                    <i class="fas fa-check text-success"></i>
+
+                </span>
+
+                {%else%}
+                <span>
+                    <a href="" class="btn btn-outline-primary btn-sm">View</a>
+
+                    <a href="{%url 'request-confirm' user.id%}" class="btn btn-outline-success btn-sm">Confirm</a>
+                </span>
+                {%endif%}
+            </td>
+
+        </tr>
+        {%endfor%}
+    </tbody>
+
+</table>
+{%endblock%}

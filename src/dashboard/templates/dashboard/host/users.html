@@ -34,34 +34,43 @@
         {%for enduser in endusers%}
         <tr>
           <td>
-            <span>
+            <a href="{%url 'profile' enduser.username%}">
               {{enduser.username}}
-            </span>
+            </a>
           </td>
 
           <td>
             <span>
-              {%if user.contractor%}
-          <a href="" class="btn btn-success"><i class="fas fa-check text-success"></i></a>
-          {%else%}
-          <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+              <a href="{%url 'profile' enduser.userdetail.contractor.user.username%}" class="btn ">
+                <span class="mr-2">{{enduser.userdetail.contractor.user.username}}</span></a>
+              {%if enduser.userdetail.contractor_confirmed%}
+              <i class="fas fa-check text-success"></i>
+              {%else%}
 
-          {%endif%}
+              <i class="fas fa-times-circle text-danger"></i>
+
+              {%endif%}
             </span>
+
           </td>
           <td>
             <span>
-              <a class="btn btn-outline-primary btn-sm" href="/user/profile">Profile</a>
+              <a class="btn btn-outline-primary btn-sm" href="/contractor/profile">View</a>
+
 
               <div class="dropdown d-inline">
-              <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assign</a>
-                
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                <a class="btn btn-outline-primary btn-sm dropdown-toggle {%if enduser.userdetail.contractor_confirmed%}d-none{%endif%}"
+                  href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">Assign</a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {%for contractor in contractors%}
-                    <li class="dropdown-item" href="#">{{contractor.username}}</a>
+                  <a class="dropdown-item"
+                    href="{%url 'assign-contractor' enduser.id contractor.id %}">{{contractor.username}}</a>
                   {%endfor%}
-                  
-                </ul>
+
+                </div>
               </div>
 
             </span>
@@ -99,6 +108,8 @@
           </td>
           <td>
             <span>
+
+
               <a class="btn btn-outline-primary" href="/contractor/profile">Profile</a>
             </span>
           </td>

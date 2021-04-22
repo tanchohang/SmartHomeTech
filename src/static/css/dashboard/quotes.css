@@ -1,5 +1,5 @@
 form{
-    width: 100%;
+    /* width: 100%; */
 }
 
 form > .card{
@@ -8,26 +8,34 @@ form > .card{
     margin-bottom: 20px;
     
 }
-
+.system{
+    /* width: 100%; */
+}
+.system .form-check,.control .form-check{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 .system .card,.control .card{
     width: 150px;
-    height: 180px;
-    float: left;
-    margin-right: 10px;
+    height: 180px; 
+    
+    margin-right: 30px;
     margin-bottom: 10px;
+    
 }
 .card img{
-    /* position: relative; */
+    position: relative; 
     height: 100px;
     width: 148px;
-}
+} 
 .card .card-body{
     
     text-align: center;
 }
 .form-check h6.card-title{
     font-size: x-small;
-    /* font-weight: 100; */
+    
 }
 
 .card .card-body a{
@@ -36,7 +44,8 @@ form > .card{
 
 .system .form-check .form-check-input,.control .form-check .form-check-input{
     position: absolute;
-    left: 150px;
+    left: 145px;
+    z-index: 100;
 }
 img{
     

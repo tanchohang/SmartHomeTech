@@ -20,7 +20,7 @@
         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <div class="float-right">
-                    <span class="user-name font-weight-bold">{{message.creator}}</span>
+                    <span class="user-name font-weight-bold">{{message.creator.user}}</span>
 
                 <i class="fas fa-user-circle"></i>
             </div>
@@ -44,7 +44,7 @@
                 <div class="info">
                     <i class="fas fa-user-circle"></i>
     
-                    <span class="user-name font-weight-bold">{{reply.author}}</span>
+                    <span class="user-name font-weight-bold">{{reply.author.user}}</span>
                     <span class="timestamp text-secondary float-right">{{reply.created}}</span>
                 </div>
                 <div class="message_preview ml-4">
@@ -56,7 +56,7 @@
             <li class="card p-3 mb-5 bg-white rounded">
                 <div class="info">
                     <div class="float-right">
-                        <span class="user-name font-weight-bold">{{reply.author}}</span>
+                        <span class="user-name font-weight-bold">{{reply.author.user}}</span>
                         <i class="fas fa-user-circle"></i>
 
                     </div>
@@ -119,7 +119,7 @@
             <div class="info">
                 <div class="">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{message.user}}</span>
+                    <span class="user-name font-weight-bold">{{user.user}}</span>
                     <div><span class="user-name font-weight-normal ml-3">{{message.subject}}</span></div>
                 </div>
             </div>

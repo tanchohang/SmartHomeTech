@@ -2,7 +2,7 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User
-from .models import UserDetail, AddressInfo
+from .models import UserDetail, AddressInfo, ContactDetail
 
 
 class LoginForm(AuthenticationForm):
@@ -30,7 +30,7 @@ class HostRegistrationForm(forms.ModelForm):
         fields = ['department', 'position']
 
 
-class EndUserRegistrationForm(forms.ModelForm):
+class UserDetailForm(forms.ModelForm):
     class Meta:
         model = UserDetail
         fields = []
@@ -39,4 +39,10 @@ class EndUserRegistrationForm(forms.ModelForm):
 class AddressInfoForm(forms.ModelForm):
     class Meta:
         model = AddressInfo
+        fields = '__all__'
+
+
+class contactDetailForm(forms.ModelForm):
+    class Meta:
+        model = ContactDetail
         fields = '__all__'

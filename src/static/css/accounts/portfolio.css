@@ -28,22 +28,33 @@
 
 }
 .G1 .text-block{
-    /* width: 100px; */
+    background-color: black;
+    opacity: .5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.G1 .text-block:hover{
+    opacity: .3;
+}
+.G1 .text-block a{
+    width: 100px;
+    align-self:center;
+}
+.G1 .text-block span{
+    width: 60%;
+    align-self: center;
 }
 .bespoke{
     background-image: url('../images/Group1.jpg');
     background-size: cover; 
     margin-right: 10px;
-    
-    display: flex;
-    align-items: center;  
 
 }
 .lighting{
     background-image: url('../images/Rectangle5.jpg');
     background-size: cover;
-    display: flex;
-    align-items: center;  
 
 }
 

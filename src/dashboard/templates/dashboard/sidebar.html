@@ -28,8 +28,16 @@
           </li>
           {%endif%}
 
+          {%if request.user.groups.first.name == 'contractor'%}
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{%url 'user-requests'%}">
+              <i class="fas fa-users"></i>
+              <span class="">User Requests</span>
+            </a>
+          </li>
+          {%endif%}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'projects'%}">
               <i class="fas fa-project-diagram"></i>
               <span class="">Projects</span>
             </a>

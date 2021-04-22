@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django import forms
 
-from ..forms import UserRegistrationForm, EndUserRegistrationForm, ContractorRegistrationForm, AddressInfoForm
+from ..forms import UserRegistrationForm, UserDetailForm, ContractorRegistrationForm, AddressInfoForm, contactDetailForm
 
 from django.contrib.auth.models import Group
 from django.contrib.auth.forms import AuthenticationForm
@@ -29,10 +29,10 @@ def loginPage(request):
 def registerPage(request):
     if request.method == 'POST':
         userForm = UserRegistrationForm(request.POST)
-        endUserForm = EndUserRegistrationForm(request.POST)
+        userdetailForm = UserDetailForm(request.POST)
         addressForm = AddressInfoForm(request.POST)
-        print(addressForm.is_valid())
-        if userForm.is_valid() and endUserForm.is_valid() and addressForm.is_valid():
+        contactForm = contactDetailForm(request.POST)
+        if userForm.is_valid() and userdetailForm.is_valid() and addressForm.is_valid() and contactForm.is_valid():
             # save user
             user = userForm.save()
             # adpad user to end-user group
@@ -42,13 +42,17 @@ def registerPage(request):
             # save address
             address = addressForm.save()
 
+            # save contact
+            contact = contactForm.save()
+
             # connect user to end-user and address table
 
-            enduser = endUserForm.save(False)
-            enduser.user = user
+            userdetail = userdetailForm.save(False)
+            userdetail.user = user
 
-            enduser.address = address
-            enduser.save()
+            userdetail.address = address
+            userdetail.contact = contact
+            userdetail.save()
 
             # authenticate user
             authUser = authenticate(
@@ -60,10 +64,11 @@ def registerPage(request):
 
     else:
         userForm = UserRegistrationForm()
-        endUserForm = EndUserRegistrationForm()
+        userdetailForm = UserDetailForm()
         addressForm = AddressInfoForm()
+        contactForm = contactDetailForm()
 
-        return render(request, 'accounts/register2.html', {'userForm': UserRegistrationForm, 'endUserForm': EndUserRegistrationForm, 'addressForm': AddressInfoForm})
+        return render(request, 'accounts/register2.html', {'userForm': UserRegistrationForm, 'userdetailForm': UserDetailForm, 'addressForm': AddressInfoForm, 'contactForm': contactForm})
 
 
 def contractorRegisterPage(request):
@@ -71,8 +76,9 @@ def contractorRegisterPage(request):
         userForm = UserRegistrationForm(request.POST)
         contractorForm = ContractorRegistrationForm(request.POST)
         addressForm = AddressInfoForm(request.POST)
-        print(addressForm.is_valid())
-        if userForm.is_valid() and contractorForm.is_valid() and addressForm.is_valid():
+        contactForm = contactDetailForm(request.POST)
+
+        if userForm.is_valid() and contractorForm.is_valid() and addressForm.is_valid() and contactForm.is_valid():
             # save user
             user = userForm.save()
             # add user to contractor group
@@ -82,10 +88,15 @@ def contractorRegisterPage(request):
             # save address
             address = addressForm.save()
 
+            # save contact
+            contact = contactForm.save()
+
             # connect user to contractor and address table
             contractorUser = contractorForm.save(False)
             contractorUser.user = user
             contractorUser.address = address
+            contractorUser.contact = contact
+
             contractorUser.save()
 
             # authenticate user
@@ -100,8 +111,9 @@ def contractorRegisterPage(request):
         userForm = UserRegistrationForm()
         contractorForm = ContractorRegistrationForm()
         addressForm = AddressInfoForm()
+        contactForm = contactDetailForm()
 
-        return render(request, 'accounts/register-contractor.html', {'userForm': UserRegistrationForm, 'contractorForm': ContractorRegistrationForm, 'addressForm': AddressInfoForm})
+        return render(request, 'accounts/register-contractor.html', {'userForm': UserRegistrationForm, 'contractorForm': ContractorRegistrationForm, 'addressForm': AddressInfoForm, 'contactForm': contactForm})
 
 
 def logoutUser(request):

@@ -12,10 +12,13 @@ ul li a:hover{
     text-decoration: none;
     color: black;
 }
-
+.message-detail form .info{
+    color: black;
+}
 .message-detail form .reply-input{
     height: 30px;
 }
+
 .subject{
 
 }
