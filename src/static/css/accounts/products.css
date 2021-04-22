@@ -4,7 +4,7 @@ section.products_page container-fluid {
     background: #174B2E;
     text-decoration-color: white;
     height: 800px;
-    margin: auto;
+    width:1500px;
     text-align:match-parent;
 }
 .h2 {
@@ -37,8 +37,7 @@ section.products_page container-fluid {
     font: Work Sans;
     left: 300px;
     top: 280px;
-    position: absolute;
-    margin-top:50px;
+    margin-top:150px;
     text-color:white;
 }
 <!----css for source Services--------------------->
@@ -122,7 +121,7 @@ int
 }
 
 .post {
-    position: absolute;
+   
     width: 1590px;
     height: 642px;
     left: 30px;
