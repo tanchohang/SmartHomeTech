@@ -1,11 +1,12 @@
 section.products_page container-fluid {
 }
-.product{
+.product {
     background: #174B2E;
-    text-decoration-color: white;
+    color: white;
     height: 800px;
-    width:1500px;
-    text-align:match-parent;
+    width: 1500px;
+    text-align: match-parent;
+    font-font-family: "Sofia", sans-serif;
 }
 .h2 {
     position: absolute;
@@ -14,7 +15,7 @@ section.products_page container-fluid {
     left: 689px;
     top: 209px;
     background: rgba(126, 202, 159, 0.09);
-    border-radius: 20px;
+    border-radius: 25px;
 }
 .h3 {
     position: absolute;
@@ -22,7 +23,7 @@ section.products_page container-fluid {
     height: 300.42px;
     left: 1000px;
     top: 250px;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 .h4 {
     position: absolute;
@@ -31,14 +32,15 @@ section.products_page container-fluid {
     left: 650.44px;
     top: 500px;
     background: url(gira3.jpg);
-    border-radius: 20px;
+    border-radius: 25px;
 }
-.top {
+.hit {
     font: Work Sans;
-    left: 300px;
+    left: 20px;
     top: 280px;
-    margin-top:150px;
-    text-color:white;
+    position: absolute;
+    margin-top: 50px;
+    text-color: white;
 }
 <!----css for source Services--------------------->
 int
@@ -81,16 +83,24 @@ int
 }
 
 .post-thumb {
-    float: right
+    float: right;
+    border-radius: 50%;
+    border: 20px solid transparent;
 }
 
     .post-thumb img {
-        display: block
+        display: block;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
     }
-
-.post-content {
-    margin-right: 210px
-}
+    .post-thumb:hover img {
+        transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        box-shadow: 2px 2px 2px #4b4b4b;
+    }
 
 .post-title {
     font-weight: bold;
@@ -104,11 +114,22 @@ int
 }
 
 .post-thumb1 {
-    float:left;
+    float: left;
+    border-radius: 50%;
+    border: 20px solid transparent;
 }
 
     .post-thumb1 img {
-        display: block
+        display: block;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+    }
+    .post-thumb1:hover img {
+        transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        box-shadow: 2px 2px 2px #4b4b4b;
     }
 
 .post-content1 {

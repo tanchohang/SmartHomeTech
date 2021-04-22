@@ -28,12 +28,12 @@ section.landing_page {
     width: 100vw;
     color:white;
 }
-.landing .hero-text{
-    font-size: 38px;
-    font-weight: bolder;
-    width: 40px;
-
-}
+    .landing .hero-text {
+        font-size: 34px;
+        font-weight: bolder;
+        width: 60px;
+        font-style: italic;
+    }
 .quote{
     width: 100vw;
 }
@@ -66,9 +66,22 @@ section.landing_page {
     margin-left: 820px;
     vertical-align: middle;
     background-color: 7ECA9F;
-    font-style:italic;
+    font-style: italic;
+    background: 7ECA9F;
+    position: relative;
+    animation: mymove 2s;
+    cursor: pointer;
 }
-    .team {
+@keyframes mymove {
+    from {
+        left: 0px;
+    }
+
+    to {
+        right: 100px;
+    }
+}
+  .team {
     background: #f1f1f1;
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
@@ -112,15 +125,34 @@ section.landing_page {
     box-sizing: border-box;
     font-style: italic;
     margin: 0 auto;
+    width:500px;
+    height:450px;
 }
 .team-image5 {
-    margin-left:90px;
-    right:768px;
-    top: 29px;
+    margin-left: 390px;
+    margin-bottom:90px;
+    right: 568px;
+    top: 89px;
+    bottom: 45px;
     width: 385px;
     height: 385px;
     border-radius: 0px;
     border: 2px solid #000000;
+}
+.about-img2 {
+    padding: 60px;
+    margin: 2%;
+    background: white;
+    width: 30%;
+    box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius: 3px;
+    transition: .2s all;
+    right: -80px;
+}
+<!--
+Smart home steps away -->
+.section-header {
+    font-style: italic;
 }
 /* 
 .team-image1 {
@@ -148,17 +180,7 @@ section.landing_page {
     border: 2px solid #000000;
     box-sizing: border-box;
 }
-.about-img2 {
-    padding: 60px;
-    margin: 2%;
-    background: white;
-    width: 30%;
-    border: 1px solid #d6d6d6;
-    box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25);
-    border-radius: 3px;
-    transition: .2s all;
-    right:-80px;
-}
+
 .row:hover .about-img2 {
     filter: blur(3px);
     opacity: .5;
