@@ -1,19 +1,29 @@
 from django import forms
-from .models import Message, MessageFiles, Reply, Project
+from .models import Message, ProjectFiles, Project, Quote, Appointment
 from tempus_dominus.widgets import DatePicker, TimePicker, DateTimePicker
+
+from crispy_forms.helper import FormHelper
+import datetime
 
 
 class QuotesForm(forms.ModelForm):
     class Meta:
-        model = Message
-        fields = ['body', 'summary']
+        model = Quote
+        fields = ['description']
 
 
 class MessageForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_show_labels = False
 
     class Meta:
         model = Message
         fields = ["subject", "body"]
+        widgets = {
+            'body': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
+        }
 
 
 class ProjectForm(forms.ModelForm):
@@ -26,56 +36,38 @@ class ProjectForm(forms.ModelForm):
         }
 
 
-class ReplyForm(forms.ModelForm):
-
-    class Meta:
-        model = Reply
-        fields = ["body"]
-        widgets = {
-            'body': forms.Textarea(attrs={'rows': 4, 'cols': 15}),
-        }
-
-
 class FileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_show_labels = False
+
     class Meta:
-        model = MessageFiles
-        fields = ['files']
+        model = ProjectFiles
+        fields = ['file']
         widgets = {
-            'files': forms.ClearableFileInput(attrs={'multiple': True}),
+            'file': forms.ClearableFileInput(attrs={'multiple': True}),
         }
 
 
-class AppointmentForm(forms.Form):
+class AppointmentForm(forms.ModelForm):
 
-    date = forms.DateField(
-        required=True,
-        widget=DatePicker(
-            options={
-                'minDate': '2020-01-1',
-                'maxDate': '2023-01-1',
-            },
-        ),
-        initial='2020-01-01',
-    )
-    time = forms.TimeField(
-        widget=TimePicker(
-            options={
-                'enabledHours': [9, 10, 11, 12, 13, 14, 15, 16],
-                'defaultDate': '1970-01-01T14:56:00'
-            },
-            attrs={
-                'input_toggle': True,
-                'input_group': False,
-            },
-        ),
-    )
+    # date = forms.DateField(input_formats=['%Y-%m-%d'],
+    #                        widget=forms.widgets.DateInput(attrs={'type': 'date'}))
+
+    time = forms.TimeField(widget=forms.TimeInput(
+        attrs={'class': 'timepicker', 'type': 'time'}))
 
     CHOICES = [('skype', 'Skype'),
                ('phone', 'Phone')]
 
     preference = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     phone = forms.CharField(max_length=15, widget=forms.TextInput(
-        attrs={
-            'placeholder': 'phone',
-            'class': 'form-control'
-        }))
+    ))
+
+    class Meta:
+        model = Appointment
+        fields = ['date', 'time', 'preference']
+        widgets = {
+            'date': forms.DateInput(format=('%Y/%m/%d'), attrs={'type': 'date'}),
+        }

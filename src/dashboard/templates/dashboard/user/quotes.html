@@ -17,27 +17,21 @@
 <div class="card project">
   <div class="card-body">
     <h6 class="card-title">Project</h6>
+    
+    {%if projects%}
     <div class="form-group">
-      {{propertyForm|crispy}}
+      <!-- <label for="project">Project</label> -->
+      <select class="form-control" id="project" name="project">
+        <option  selected disabled>Select a Project</option>
+        {%for project in projects%}
+        <option value="{{project.id}}">{{project.name}}</option>
+        {%endfor%}
+      </select>
     </div>
-    <div class="form-row">
-      <div class="col">
-          {{addressForm.address_1|as_crispy_field}}
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
-          {{addressForm.city|as_crispy_field}}
-      </div>
-      <div class="col">
-        {{addressForm.country|as_crispy_field}}
-    </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
-          {{addressForm.postcode|as_crispy_field}}
-      </div>
-    </div>
+    {%else%}  
+    <a href="{%url 'projects'%}" class="btn btn-primary btn-lg">Create A Project</a>
+    {%endif%}
+    
 </div>
 </div>
 
@@ -46,7 +40,7 @@
         <div class="card-body">
             <h6 class="card-title">Property Survey</h6>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                    
                     <select class="form-control" id="rooms" name="bedrooms">
                         <option  selected disabled>How many bedrooms does your property have?</option>
                         <option value="1">1</option>

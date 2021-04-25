@@ -11,22 +11,37 @@
     <thead>
         <tr>
             <th>user</th>
+            <th>Project</th>
+            <th>Quotation</th>
             <th>action</th>
         </tr>
     </thead>
     <tbody>
         
-        {%for user in users%}
+        {%for project in projects%}
         <tr>
             <td>
-                <a href="{%url 'profile' user.user.username%}">
-                    {{user.user.username}}
+                <a href="{%url 'profile' project.owner.user%}">
+                    {{project.owner.user|title}}
                 </a>
 
             </td>
-
             <td>
-                {%if user.contractor_confirmed%}
+                {{project.name}}
+            </td>
+            <td>
+                {{project.quote.quotaion}}
+                <span>
+                    {%if quote.is_confirmed%}
+                    <a href="" class="btn btn-success"><i class="fas fa-check text-success"></i></a>
+                    {%else%}
+                    <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+          
+                    {%endif%}
+                  </span>
+            </td>
+            <td>
+                {%if project.contractor_confirmed%}
                 <span>
                     <i class="fas fa-check text-success"></i>
 
@@ -36,7 +51,7 @@
                 <span>
                     <a href="" class="btn btn-outline-primary btn-sm">View</a>
 
-                    <a href="{%url 'request-confirm' user.id%}" class="btn btn-outline-success btn-sm">Confirm</a>
+                    <a href="{%url 'request-confirm' project.id%}" class="btn btn-outline-success btn-sm">Confirm</a>
                 </span>
                 {%endif%}
             </td>

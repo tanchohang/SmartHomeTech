@@ -24,77 +24,53 @@
     <table class="table users">
       <thead>
         <tr>
-          <th>user</th>
-          <th>Contractor</th>
-          <th>action</th>
+          <th>User</th>
+          <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
-      <tbody>
-
+      <tbody class="mb-3">
         {%for enduser in endusers%}
-        <tr>
+        <tr class="bg-light">
           <td>
             <a href="{%url 'profile' enduser.username%}">
-              {{enduser.username}}
+              {{enduser.username|title}}
             </a>
           </td>
-
           <td>
-            <span>
-              <a href="{%url 'profile' enduser.userdetail.contractor.user.username%}" class="btn ">
-                <span class="mr-2">{{enduser.userdetail.contractor.user.username}}</span></a>
-              {%if enduser.userdetail.contractor_confirmed%}
-              <i class="fas fa-check text-success"></i>
-              {%else%}
+            {%if enduser.userdetail.project.contractor_confirmed%}
+            <i class="fas fa-check text-success"></i>
+            {%else%}
 
-              <i class="fas fa-times-circle text-danger"></i>
+            <i class="fas fa-times-circle text-danger"></i>
 
-              {%endif%}
-            </span>
-
+            {%endif%}
           </td>
           <td>
             <span>
               <a class="btn btn-outline-primary btn-sm" href="/contractor/profile">View</a>
-
-
-              <div class="dropdown d-inline">
-
-                <a class="btn btn-outline-primary btn-sm dropdown-toggle {%if enduser.userdetail.contractor_confirmed%}d-none{%endif%}"
-                  href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Assign</a>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {%for contractor in contractors%}
-                  <a class="dropdown-item"
-                    href="{%url 'assign-contractor' enduser.id contractor.id %}">{{contractor.username}}</a>
-                  {%endfor%}
-
-                </div>
-              </div>
-
             </span>
           </td>
         </tr>
         {%endfor%}
       </tbody>
-
     </table>
   </div>
+
   <div class="tab-pane fade" id="pills-contractors" role="tabpanel" aria-labelledby="pills-profile-tab">
 
     <table class="table contractors">
       <thead>
         <tr>
-          <th>user</th>
-          <th>status</th>
-          <th>action</th>
+          <th>User</th>
+          <th>Designation</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
 
         {%for contractor in contractors%}
-        <tr>
+        <tr class="bg-light">
           <td>
             <span>
               {{contractor.username}}
@@ -103,13 +79,12 @@
 
           <td>
             <span>
-              test
+              {{contractor.userdetail.designation}}
+
             </span>
           </td>
           <td>
             <span>
-
-
               <a class="btn btn-outline-primary" href="/contractor/profile">Profile</a>
             </span>
           </td>

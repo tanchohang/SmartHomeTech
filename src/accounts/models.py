@@ -15,7 +15,7 @@ class ContactDetail(models.Model):
 class AddressInfo(models.Model):
 
     address_1 = models.CharField(max_length=100)
-    address_2 = models.CharField(max_length=100)
+    address_2 = models.CharField(max_length=100, blank=True)
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
     postcode = models.CharField(max_length=30)
@@ -26,14 +26,13 @@ class UserDetail(models.Model):
     department = models.CharField(max_length=100, blank=True)
     position = models.CharField(max_length=100, blank=True)
 
+    designation = models.CharField(max_length=50, blank=True)
+
     address = models.OneToOneField(AddressInfo, on_delete=models.CASCADE)
     contact = models.OneToOneField(ContactDetail, on_delete=models.CASCADE)
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-    contractor_confirmed = models.BooleanField(default=False)
-    contractor = models.ForeignKey(
-        "self", blank=True, null=True, on_delete=models.SET_NULL)
 
 # class Service(models.Model):
 #     title = models.CharField(max_length=99)

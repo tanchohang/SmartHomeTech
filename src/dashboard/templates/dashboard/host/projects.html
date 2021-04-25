@@ -1,0 +1,106 @@
+{% extends '../layout.html' %}
+{%load static%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/quotes.css'%}">
+
+{%endblock%}
+{%block content%}
+
+<section class="">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Project</th>
+  
+          <th>Contractor</th>
+  
+          <th>Confirmed</th>
+  
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+        {%for project in projects%}
+        <tr>
+        <td>
+          <span>
+            {{project.owner.user|title}}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{project.name}}
+          </span>
+        </td>
+        <td>
+          
+            {%if project.contractor%}
+            <span>
+            {{project.contractor.user}}
+
+            </span>
+            <span>
+              {%if project.contractor_confirmed%}
+              <a href="" class="btn "><i class="fas fa-check text-success"></i></a>
+              {%else%}
+              <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+    
+              {%endif%}
+            </span>
+            {%else%}
+          <div class="dropdown d-inline">
+            
+            <a class="btn btn-outline-primary btn-sm dropdown-toggle {%if enduser.userdetail.contractor_confirmed%}d-none{%endif%}"
+              href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Assign</a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              {%for contractor in contractors%}
+              <a class="dropdown-item"
+                href="{%url 'assign-contractor' project.id contractor.id %}">{{contractor}}</a>
+
+              {%endfor%}
+            
+            </div>
+            {%endif%}
+
+          </div>
+        </td>
+  
+        <td>
+          <span>
+            {%if project.quote.is_confirmed%}
+            <a href="" class="btn "><i class="fas fa-check text-success"></i></a>
+            {%else%}
+            <a href="" class="btn "><i class="fas fa-times-circle text-danger"></i></a>
+  
+            {%endif%}
+          </span>
+        </td>
+        <td>
+          <span>
+            <a class="btn btn-sm btn-outline-primary text-primary"><i
+                class="far fa-eye"></i></a>
+            <button class="btn btn-sm btn-outline-primary text-primary"><i class="fas fa-check"></i></button>
+  
+  
+  
+          </span>
+        </td>
+  </tr>
+  
+
+        
+  
+  
+        {%endfor%}
+      </tbody>
+  
+    </table>
+  </section>
+  
+
+
+{%endblock%}

@@ -1,0 +1,167 @@
+[
+    {
+      "model": "auth.group",
+      
+      "fields": {
+        "name": "end-user"
+      }
+    },
+    {
+      "model": "auth.group",
+
+      "fields": {
+        "name": "contractor"
+      }
+    },
+    {
+      "model": "auth.group",
+      
+      "fields": {
+        "name": "host"
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+          "password": "pbkdf2_sha256$216000$eDxwpDjneX3V$CjEn1jBkdPiNbMO6DpU5Uz6yGY9uhvd5mAmSsxmF3uA=",
+          "last_login": "2021-04-25T20:40:34Z",
+          "is_superuser": true,
+          "username": "admin",
+          "first_name": "",
+          "last_name": "",
+          "email": "admin@admin.com",
+          "is_staff": true,
+          "is_active": true,
+          "date_joined": "2021-04-25T20:39:58Z",
+          "groups": [3],
+          "user_permissions": []
+      }
+  }, {
+      "model": "auth.user",
+      "pk": 2,
+      "fields": {
+          "password": "pbkdf2_sha256$216000$eln3rjfxrqYF$CS8SowE2+iyieJa3DRqZIJP+og35K3QxALi31nLBUyg=",
+          "last_login": "2021-04-25T20:44:28.883Z",
+          "is_superuser": false,
+          "username": "enduser",
+          "first_name": "Nina",
+          "last_name": "Jacobs",
+          "email": "kowigasyni@mailinator.com",
+          "is_staff": false,
+          "is_active": true,
+          "date_joined": "2021-04-25T20:43:54.455Z",
+          "groups": [1],
+          "user_permissions": []
+      }
+  }, {
+      "model": "auth.user",
+      "pk": 3,
+      "fields": {
+          "password": "pbkdf2_sha256$216000$8ltFU1WsM5Ln$HJAACtK3EHdT7Yo25qDnBVr0/bHu/Ecc4rUinLqqv8k=",
+          "last_login": "2021-04-25T20:44:21.222Z",
+          "is_superuser": false,
+          "username": "contractor",
+          "first_name": "Knox",
+          "last_name": "Riddle",
+          "email": "cawogupo@mailinator.com",
+          "is_staff": false,
+          "is_active": true,
+          "date_joined": "2021-04-25T20:44:20.013Z",
+          "groups": [2],
+          "user_permissions": []
+      }
+  },
+    {
+      "model": "accounts.contactdetail",
+      "pk": 1,
+      "fields": {
+          "phone_no": "021111113232",
+          "mobile_no": "077711111111"
+      }
+  }, {
+      "model": "accounts.contactdetail",
+      "pk": 2,
+      "fields": {
+          "phone_no": "+1 (102) 629-1623",
+          "mobile_no": "Officia soluta nisi veniam mo"
+      }
+  }, {
+      "model": "accounts.contactdetail",
+      "pk": 3,
+      "fields": {
+          "phone_no": "+1 (689) 647-6952",
+          "mobile_no": "Ut et delectus non totam in s"
+      }
+  }, {
+      "model": "accounts.addressinfo",
+      "pk": 1,
+      "fields": {
+          "address_1": "2",
+          "address_2": "Warrender Park Road",
+          "city": "Edinburgh",
+          "country": "United Kingdom",
+          "postcode": "EH1111"
+      }
+  }, {
+      "model": "accounts.addressinfo",
+      "pk": 2,
+      "fields": {
+          "address_1": "27 New Avenue",
+          "address_2": "Accusamus adipisicing accusantium voluptatem ut est aliqua Eveniet consequatur Voluptate quas",
+          "city": "Nihil quidem ea dolorem aut si",
+          "country": "Est non et deleniti beatae ut",
+          "postcode": "Reprehenderit facere eligendi"
+      }
+  }, {
+      "model": "accounts.addressinfo",
+      "pk": 3,
+      "fields": {
+          "address_1": "840 Clarendon Freeway",
+          "address_2": "Voluptatum ex aliquid quam impedit accusantium in perspiciatis officiis sit ipsam nihil non iusto",
+          "city": "Nostrum sequi velit vel dolor",
+          "country": "Maiores architecto laboris vol",
+          "postcode": "Consequat Cupidatat ullamco u"
+      }
+  }, {
+      "model": "accounts.userdetail",
+      "pk": 1,
+      "fields": {
+          "company_name": "",
+          "department": "hr",
+          "position": "manager",
+          "designation": "",
+          "address": 1,
+          "contact": 1,
+          "user": 1,
+          "uuid": "cf905de5-a593-47f5-aca7-acfbb92ecdcf"
+      }
+  }, {
+      "model": "accounts.userdetail",
+      "pk": 2,
+      "fields": {
+          "company_name": "",
+          "department": "",
+          "position": "",
+          "designation": "",
+          "address": 2,
+          "contact": 2,
+          "user": 2,
+          "uuid": "93202664-1b6f-4674-a25c-d3fc27a8fde3"
+      }
+  }, {
+      "model": "accounts.userdetail",
+      "pk": 3,
+      "fields": {
+          "company_name": "Gardner Davidson Associates",
+          "department": "",
+          "position": "",
+          "designation": "",
+          "address": 3,
+          "contact": 3,
+          "user": 3,
+          "uuid": "b9f18a2e-d942-47c4-9fdd-9851aa0734ad"
+      }
+  }
+    
+  ]

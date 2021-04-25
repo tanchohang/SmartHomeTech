@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from dashboard.models import Message, Reply, Quote
+from dashboard.models import Message, Quote, Project, Appointment
 from accounts.models import UserDetail
 from django.contrib.auth.models import User
 
@@ -80,11 +80,23 @@ def message_delete(request, id):
 
 @login_required(login_url='login')
 @allowed_users(allowed_groups=['host'])
-def assign_contractor(request, user_id, contractor_id):
-    user = UserDetail.objects.get(user_id=user_id)
+def assign_contractor(request, project_id, contractor_id):
+    project = Project.objects.get(id=project_id)
     contractor = UserDetail.objects.get(user_id=contractor_id)
-    user.contractor = (contractor)
-    user.save()
+    project.contractor = contractor
+    project.save()
 
     # user.save()
-    return redirect('users')
+    return redirect('projects')
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_groups=['host'])
+def appointment(request, project):
+    appointment = Appointment()
+    appointment.quote = Project.objects.get(id=project).quote
+    appointment.save()
+
+    # projects = Project.objects.all()
+
+    return redirect('quotes')

@@ -2,17 +2,35 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+{% load crispy_forms_tags %}
 
-{{ form.media }}
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <form method="post" action=".">
-        {% csrf_token %}
-        {{ form.as_p }}
+<!-- The Modal -->
+<div class="modal" id="appointment">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
-        <input type="submit" class="btn btn-primary" value="submit"/>
-      </form>
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Confirm Appointment</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      {%if project.quote.appointment%}
+      <div class="modal-body">
+        <form method="post" action="{%url 'appointment' project.quote.appointment.id%}">
+          {% csrf_token %}
+          {{ appointmentForm|crispy}}
+          
+          <input type="submit" class="btn btn-primary" value="submit"/>
+        </form>
+      </div>
+      {%endif%}
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
     </div>
   </div>
 </div>
