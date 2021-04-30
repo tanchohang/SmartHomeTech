@@ -129,7 +129,7 @@ def message_detail(request, id):
 @ allowed_users(allowed_groups=['end-user', 'contractor', 'host'])
 def message_delete(request, id):
     message = Message.objects.filter(id=id).delete()
-    return redirect('/user/messages')
+    return redirect('messages')
 
 
 @ login_required(login_url='login')

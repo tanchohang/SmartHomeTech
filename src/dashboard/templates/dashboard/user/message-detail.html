@@ -16,7 +16,7 @@
 <!-- Messagees Detail -->
 <div class="message-detail">
     <h5 class="subject">{{message.subject}} {{message.project.name}}</h5>
-    <a href="/dashboard/messages/{{message.id}}/delete" class="text-danger"><i class="fas fa-trash"></i></a>
+    <a href="{%url 'message-delete' message.id%}" class="text-danger"><i class="fas fa-trash"></i></a>
 
     <ul>
         <!-- Quote formated display -->
