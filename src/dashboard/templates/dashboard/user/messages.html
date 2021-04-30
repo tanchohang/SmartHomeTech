@@ -12,59 +12,88 @@
 {%block content%}
 
 
-
+<!-- Heading -->
 <div class="clearfix">
-
-
-<h3 class="d-inline">Conversations  </h3>
-<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#new">
+  <h3 class="d-inline">Conversations </h3>
+  <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#new">
     New Message
   </button>
 </div>
-<ul class="my-3">
-    {%for message in messages%}
-    <li class="my-2">
-        <a class="card  p-3 bg-white rounded" href="{{message.id}}">
-                <div class="info">
-                    <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{message.creator.user}}</span>
-                
-                    <span class="timestamp text-secondary float-right">{{message.created}}</span>
-    
-                </div>
-                <div class="message_preview ml-4">{{message.subject}}</div>       
-        </a>
-    </li>
 
-    {%endfor%}
+
+<ul class="my-3">
+  {%for message in messages%}
+  {%if message.subject%}
+  <li class="my-2">
+    <a class="card  p-3 bg-white rounded" href="{%url 'message-detail' message.id%}">
+      <div class="info">
+        <i class="fas fa-user-circle"></i>
+        <span class="user-name font-weight-bold">{{message.creator.user}}</span>
+
+        <span class="timestamp text-secondary float-right">{{message.created}}</span>
+
+      </div>
+      <div class="message_preview ml-4">{{message.subject}}</div>
+    </a>
+  </li>
+{%endif%}
+  {%endfor%}
 </ul>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create A Message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form method="POST" action="" enctype="multipart/form-data">
-            {%csrf_token%}
+
+<!-- Modal -->
+<div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create A Message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="" enctype="multipart/form-data">
+        {%csrf_token%}
         <div class="modal-body">
-            {{ form|crispy }}
-            {{fileform}}
-          
+          {%if projects%}
+          <div class="form-group">
+            <label for="project">Project</label>
+            <select name="project" class="form-control" id="project">
+              <option value="" selected disabled>select a project</option>
+              {%for project in projects%}
+              <option value="{{project.id}}">{{project.name}}</option>
+              {%endfor%}
+            </select>
+          </div>
+          {%endif%}
+          {%if not projects%}
+
+          <div class="form-group">
+
+            <label for="{{form.subject.id_for_label}}">Subject</label>
+
+            {{form.subject|as_crispy_field}}
+          </div>
+          {%endif%}
+          <div class="form-group">
+            <label for="{{form.body.id_for_label}}">Message</label>
+            {{form.body|as_crispy_field}}
+          </div>
+          {%if projects%}
+
+          <div class="form-group">
+            <label for="{{form.file.id_for_label}}">File</label>
+            {{fileform.file|as_crispy_field}}
+          </div>
+          {%endif%}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-primary" value="Send"/>
+          <input type="submit" class="btn btn-primary" value="Send" />
         </div>
-        </form>
+      </form>
 
-      </div>
     </div>
   </div>
+</div>
 
 
 

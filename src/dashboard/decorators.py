@@ -19,7 +19,8 @@ def allowed_users(allowed_groups=[]):
             group = None
             if request.user.groups.exists():
                 group = request.user.groups.all()[0].name
-
+            else:
+                raise ValueError('error')
             if group in allowed_groups:
                 return view_func(request, *args, **kwargs)
             else:

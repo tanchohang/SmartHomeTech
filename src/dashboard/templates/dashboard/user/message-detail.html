@@ -5,142 +5,160 @@
 
 {%block style%}
 <link rel="stylesheet" type="text/css" href="{%static 'css/dashboard/message.css'%}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css"
+    crossorigin="anonymous" />
 
 {%endblock%}
 
 {%block content%}
+
+<!-- Messagees Detail -->
 <div class="message-detail">
-    <h5 class="subject">{{message.subject}} </h5>
+    <h5 class="subject">{{message.subject}} {{message.project.name}}</h5>
     <a href="/dashboard/messages/{{message.id}}/delete" class="text-danger"><i class="fas fa-trash"></i></a>
+
     <ul>
-
-
-        <li class="card p-3 mb-5 bg-white rounded">
+        <!-- Quote formated display -->
+        {%if quote%}
+        
+         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <i class="fas fa-user-circle"></i>
                 <span class="user-name font-weight-bold">{{message.creator.user}}</span>
                 <span class="timestamp text-secondary float-right">{{message.created}}</span>
             </div>
-            <div class="message_preview ml-4">
-                        {%if quote%}   
-                        <h5>Quote</h5>
-                        <p><b>Bedrooms:</b>{{quote.bedrooms}}</p>
-                        <p><b>system_required:</b>{{quote.system_required}}</p>
-                        <p><b>system_control:</b>{{quote.system_control}}</p>
-                        <p><b>description:</b>{{quote.description}}</p>
-                        {%else%}
-                        {{message.body}}     
 
-                        {%endif%}                
+            <div class="message_preview ml-4">
+                <h5 class="mt-3">Quote</h5>
+                <p><b>Bedrooms:</b>{{quote.bedrooms}}</p>
+                <p><b>system_required:</b>{{quote.system_required}}</p>
+                <p><b>system_control:</b>{{quote.system_control}}</p>
+                <p><b>description:</b>{{quote.description}}</p>
+                
             </div>
         </li>
+    {%endif%}
+        <!--End of Quote formated display -->
 
-        {%for reply in replies%}
-        
-        {%if reply.author == user%}
-        
-            <li class="card p-3 mb-5 bg-white rounded">
-                <div class="info">
-                    <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{reply.author.user}}</span>
-                    <span class="timestamp text-secondary float-right">{{reply.created}}</span>
-                </div>
-                <div class="message_preview ml-4">
-                    {{reply.body}}
-                </div>
-            </li>
-        {%else%}
 
-            <li class="card p-3 mb-5 bg-white rounded">
-                <div class="info">
-                    <div class="float-right">
-                        <span class="user-name font-weight-bold">{{reply.author.user}}</span>
-                        <i class="fas fa-user-circle"></i>
+        {%for reply in messages%}          
 
-                    </div>
-                    <span class="timestamp text-secondary">{{reply.created}}</span>
-                </div>
-                <div class="message_preview ml-4 ">
-                    <div class="float-right mr-3">
-                        {{reply.body}}
-                    </div>
-                </div>
-
-            </li>
-            {%endif%}
-               
-        {%endfor%}
-
-        <!-- <li class="card p-3 mb-5 bg-white rounded">
+        {%if reply.creator == request.user.userdetail %}       
+       
+        <li class="card p-3 mb-5 bg-white rounded">
             <div class="info">
                 <i class="fas fa-user-circle"></i>
-                <span class="user-name font-weight-bold">John Doe</span>
-                <span class="timestamp text-secondary float-right">Monday 09/03/2021 09:05 AM</span>
+                <span class="user-name font-weight-bold">{{reply.creator.user}}</span>
+                <span class="timestamp text-secondary float-right">{{reply.created}}</span>
             </div>
-            <div class="message_preview ml-4">Hi,
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa egestas ut semper tellus egestas felis.
-                Eu lectus lorem in aliquam, ac, pharetra nibh vitae. Posuere dui nibh eu mauris. Aliquet sed euismod
-                risus at platea feugiat eleifend. Sem accumsan sem et tempor tortor aliquet.
-                Pharetra, egestas quis enim varius massa. Gravida adipiscing lobortis eu volutpat sagittis integer vel
-                aliquam. Et pellentesque placerat imperdiet et sed. Integer congue faucibus interdum mauris volutpat.
-                Vestibulum, ac diam fermentum, volutpat, nisl libero. Nec, eget feugiat scelerisque sollicitudin urna,
-                dis dis quis.
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Appointment
-                  </button>
-                
-                <p>  kind regards<br>
-                john murry</p>
+            <div class="message_preview ml-4">
+                {{reply.body}}
             </div>
         </li>
-            <li class="card p-3 mb-5 bg-white rounded">
-                <div class="info">
-                    <div class="float-right">
-                        <span class="user-name font-weight-bold">Jane Doe</span>
-                        <i class="fas fa-user-circle"></i>
-    
-                    </div>
-                    <span class="timestamp text-secondary">Monday 09/03/2021 09:05 AM</span>
-                </div>
-                <div class="message_preview ml-4">Hi,
-    
-                </div>
-    
-            </li> -->
 
-        
-        
+        {%else%}
+
+        <!-- Appointment Template for user side  -->
+        {%if reply.project.quote.appointment %} 
+        {%if request.user.groups.all.0.name == "end-user"%}
+        <li class="card p-3 mb-5 bg-white rounded">
+            <div class="info">
+                <div class="float-right">
+                    <span class="user-name font-weight-bold">{{reply.creator.user}}</span>
+                    <i class="fas fa-user-circle"></i>
+
+                </div>
+                <span class="timestamp text-secondary">{{reply.created}}</span>
+            </div>
+            <div class="message_preview ml-4 ">
+                <div class="float-right mr-3">
+                   
+                    
+                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Confirm Appointment
+                    </a>
+                    
+                </div>
+            </div>
+
+        </li>
+        {%endif%}
+        {%else%}
+        <li class="card p-3 mb-5 bg-white rounded">
+            <div class="info">
+                <div class="float-right">
+                    <span class="user-name font-weight-bold">{{reply.creator.user}}</span>
+                    <i class="fas fa-user-circle"></i>
+
+                </div>
+                <span class="timestamp text-secondary">{{reply.created}}</span>
+            </div>
+            <div class="message_preview ml-4 ">
+                <div class="float-right mr-3">
+                   
+                    
+                    {{reply.body}}
+                    
+                </div>
+            </div>
+
+        </li>
+        {%endif%}
+
+        {%endif%}
+
+        {%endfor%} 
+
+       
     </ul>
-    <form method="POST" action="" enctype="multipart/form-data">
+
+    <!-- Message Reply Form -->
+    <form method="POST" action="{%url 'message-detail' message.id%}" enctype="multipart/form-data">
         {%csrf_token%}
         <li class="card p-3 mb-5 bg-white rounded">
             <div class="info text-secondary">
                 <div class="">
                     <i class="fas fa-user-circle"></i>
-                    <span class="user-name font-weight-bold">{{message.creator.user}}</span>
-                    <div><span class="user-name font-weight-normal ml-3">{{message.subject}}</span></div>
+                    <span class="user-name font-weight-bold">{{user}}</span>
+                    <div><span class="user-name font-weight-normal ml-3">{{message.subject}} {{message.project.name}}</span></div>
                 </div>
             </div>
             <div class="form-group mt-3 textarea">
-                {{replyForm.body|as_crispy_field}}
-                <div class=" action-buttons">
-                    <input type="submit" class="btn btn-primary mt-3" value="Send"/>
-                    {{fileform}}
-                    <!-- <input type="file" name="files" class="btn mt-2 " multiple/> -->
-                    <!-- <a class="btn btn-light"><i class="fas fa-paperclip"></i></a> -->
+                {{messageForm.body|as_crispy_field}}
+            </div>
+
+
+            <div class="action-buttons">
+                <div class="form-group w-25">
+                    {{fileform.file|as_crispy_field}}
+
                 </div>
-               
-              </div>
+                <div>
+                    <input type="submit" class="btn btn-primary my-3" value="Send" />
+
+                </div>        
+
+
+                <!-- <input type="file" name="files" class="btn mt-2 " multiple/> -->
+                <!-- <a class="btn btn-light"><i class="fas fa-paperclip"></i></a> -->
+            </div>
+
+
 
         </li>
-        
+
     </form>
+
+   
+
 </div>
 
 
 {%endblock%}
 
 {%block script%}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js"
+    crossorigin="anonymous"></script>
 {%endblock%}

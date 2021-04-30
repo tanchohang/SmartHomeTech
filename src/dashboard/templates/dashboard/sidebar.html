@@ -7,21 +7,22 @@
 
 
 <aside class="sidebar" style="left: 0px;">
-    <div class="profile">
-        <span>Dashboard</span>
+    <div class="profile text-center mt-3">
+        <span class="">SmartHome Tech</span>
     </div>
+    <hr/>
 
     <div class="">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'dashboard'  %}">
+            <a class="nav-link {%if request.resolver_match.url_name == 'dashboard'%} active-sidebar {%endif%}" href="{%url 'dashboard'  %}">
               <i class="fas fa-tachometer-alt"></i>
               <span class="">Overview</span>
             </a>
           </li>
           {%if request.user.groups.first.name == 'host'%}
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'users'%}">
+            <a class=" nav-link {%if request.resolver_match.url_name == 'users'%} active-sidebar {%endif%}" href="{%url 'users'%}">
               <i class="fas fa-users"></i>
               <span class="">Users</span>
             </a>
@@ -30,29 +31,29 @@
 
           {%if request.user.groups.first.name == 'contractor'%}
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'user-requests'%}">
+            <a class="nav-link {%if request.resolver_match.url_name ==  'user-requests' %} active-sidebar {%endif%}" href="{%url 'user-requests'%}">
               <i class="fas fa-users"></i>
               <span class="">User Requests</span>
             </a>
           </li>
           {%endif%}
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'projects'%}">
+            <a class="nav-link {%if request.resolver_match.url_name == 'projects'%} active-sidebar {%endif%}" href="{%url 'projects'%}">
               <i class="fas fa-project-diagram"></i>
               <span class="">Projects</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="{%url 'quotes'  %}">
+            <a class="nav-link {%if request.resolver_match.url_name == 'quotes'%} active-sidebar {%endif%}" href="{%url 'quotes'  %}">
               <i class="fas fa-tasks"></i>
               <span class="">Quotes</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="{%url 'profile' request.user.username %}">
+            <a class="nav-link {%if request.resolver_match.url_name == 'profile'%} active-sidebar {%endif%}" href="{%url 'profile' request.user.username %}">
               <i class="fas fa-user"></i>
               <span class="">Profile</span>
             </a>
           </li><li class="nav-item">
-            <a class="nav-link" href="{%url 'message'  %}">
+            <a class="nav-link {%if request.resolver_match.url_name == 'message' or request.resolver_match.url_name == 'message-detail'%} active-sidebar {%endif%}" href="{%url 'message'  %}">
               <i class="fas fa-envelope"></i>
               <span class="">Messages</span>
             </a>
@@ -64,7 +65,7 @@
             <span class="">Settings</span>
           </a>
         </li><li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link " href="#">
             <i class="fas fa-medal"></i>
             <span class="">Subscriptions</span>
           </a>

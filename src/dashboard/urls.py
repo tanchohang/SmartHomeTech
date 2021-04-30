@@ -8,7 +8,7 @@ urlpatterns = [
     path('messages/', views.user.messages, name='message'),
     path('messages/<id>/', views.user.message_detail, name='message-detail'),
     path('messages/<id>/delete', views.user.message_delete),
-    path('appointment/', views.user.appointment, name='appointment'),
+    path('appointment/<appointment>', views.user.appointment, name='appointment'),
     path('projects/', views.user.projects, name='projects'),
 
 
@@ -16,7 +16,7 @@ urlpatterns = [
 
     # Contractor url
     path('user_requests/', views.user.user_requests, name='user-requests'),
-    path('user_requests/<int:user>',
+    path('user_requests/<int:project>',
          views.user.user_requests_confirmation, name='request-confirm'),
 
 
@@ -25,9 +25,13 @@ urlpatterns = [
 
 
     path('users/', views.host.users, name='users'),
-    path('assign-contractor/<user_id>/contractor/<contractor_id>', views.host.assign_contractor,
+    path('user/<project_id>/contractor/<contractor_id>', views.host.assign_contractor,
          name='assign-contractor'),
 
+    path('projects/<project>/appointment/',
+         views.host.appointment, name='host-appointment'),
+
+    path('quotes/<quote>', views.user.quotation, name='quotation'),
 
 
 
