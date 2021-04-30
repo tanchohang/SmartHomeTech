@@ -110,7 +110,7 @@ int
 .post-container1 {
     margin: 20px 20px 0 0;
     border: 5px solid transparent;
-    overflow: auto
+    overflow: auto;
 }
 
 .post-thumb1 {
@@ -137,8 +137,7 @@ int
 }
 
 .post-title {
-    font-weight: bold;
-    font-size: 200%
+    font-size: 200%;
 }
 
 .post {
@@ -157,8 +156,8 @@ int
     border: 2px solid;
     position: relative;
     border-radius: 50%;
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 65%;
     padding:90px;
     Font:Work Sans;
 }

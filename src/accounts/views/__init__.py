@@ -22,7 +22,7 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'accounts/about.html')
+    return render(request, 'accounts/about.html',{'include': True, 'navlink': 'about'})
 
 
 def estimator(request):

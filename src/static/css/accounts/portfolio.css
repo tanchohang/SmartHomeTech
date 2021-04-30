@@ -11,7 +11,7 @@
 }
 
 .hero .heading{
-    font-size: 3em;
+    font-size: 2em;
     color: #828282;
     font-weight: bolder;
 }
@@ -50,7 +50,6 @@
     background-image: url('../images/Group1.jpg');
     background-size: cover; 
     margin-right: 10px;
-
 }
 .lighting{
     background-image: url('../images/Rectangle5.jpg');
