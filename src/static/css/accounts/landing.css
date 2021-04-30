@@ -63,7 +63,7 @@ section.landing_page {
     width: 599px;
     height: 400px;
     margin-top: 200px;
-    margin-left: 820px;
+    margin-left: 260px;
     vertical-align: middle;
     background-color: 7ECA9F;
     font-style: italic;
@@ -118,20 +118,19 @@ section.landing_page {
 
 .team-image {
     border: 2px solid #000000;
-    left: 210px;
     top: -350px;
     bottom: 17%;
     background: #FFFFFF;
     box-sizing: border-box;
     font-style: italic;
-    margin: 0 auto;
+    margin-left:490px;
     width:500px;
     height:450px;
 }
 .team-image5 {
     margin-left: 390px;
-    margin-bottom:90px;
-    right: 568px;
+    margin-top:130px;
+    right: 368px;
     top: 89px;
     bottom: 45px;
     width: 385px;
@@ -141,13 +140,13 @@ section.landing_page {
 }
 .about-img2 {
     padding: 60px;
-    margin: 2%;
+    margin: 1%;
     background: white;
-    width: 30%;
+    width: 20%;
     box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25);
-    border-radius: 3px;
+    border-radius: 1px;
     transition: .2s all;
-    right: -80px;
+    right: -100px;
 }
 <!--
 Smart home steps away -->
